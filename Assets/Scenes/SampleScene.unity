@@ -428,7 +428,6 @@ GameObject:
   - component: {fileID: 672778519}
   - component: {fileID: 672778518}
   - component: {fileID: 672778517}
-  - component: {fileID: 672778523}
   m_Layer: 0
   m_Name: Chara (1)
   m_TagString: Untagged
@@ -536,27 +535,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 672778516}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.52, y: 25.17, z: 0}
+  m_LocalPosition: {x: -7.52, y: 2.92, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &672778523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 672778516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 210ab01a23377e74a85ec81254e81ce3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  G: {x: 0, y: -100, z: 0}
-  objectRb: {fileID: 672778519}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -846,7 +831,6 @@ GameObject:
   - component: {fileID: 1218270424}
   - component: {fileID: 1218270425}
   - component: {fileID: 1218270426}
-  - component: {fileID: 1218270427}
   m_Layer: 0
   m_Name: Chara
   m_TagString: Untagged
@@ -912,7 +896,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1218270419}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.32, y: 24.28, z: 0}
+  m_LocalPosition: {x: 1.32, y: 6.78, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -961,20 +945,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1218270427
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1218270419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 210ab01a23377e74a85ec81254e81ce3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  G: {x: 0, y: -100, z: 0}
-  objectRb: {fileID: 1218270424}
 --- !u!1 &1843006295
 GameObject:
   m_ObjectHideFlags: 0
