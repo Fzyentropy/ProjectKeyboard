@@ -14,6 +14,7 @@ public class Key : MonoBehaviour
 {
     [Header("Basic Attribute")]
     public KeyCode keyName;
+    private AudioSource audioSource;
 
     [Header("Physics Settings")]
     private Rigidbody keyRb;
@@ -43,6 +44,8 @@ public class Key : MonoBehaviour
     /// </summary>
     private void KeyInitializer()
     {
+        audioSource = GetComponent<AudioSource>();
+        
         keyRb = this.AddComponent<Rigidbody>();
         keyRb.constraints = RigidbodyConstraints.FreezeAll;
         keyRb.constraints = ~RigidbodyConstraints.FreezePositionY;
@@ -62,6 +65,7 @@ public class Key : MonoBehaviour
         {
             print(keyName);
             keyRb.AddForce(pressForce, ForceMode.Impulse);
+            audioSource.Play();
         }
     }
     
