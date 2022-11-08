@@ -112,10 +112,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyName: 97
-  audioSource: {fileID: -3056062949163199258, guid: 48d5da29390474061ba9ccbb1b301795, type: 3}
-  pressForceMagnitude: 15
-  bounceForceMagnitude: 250
-  mass: 1
+  pressForceMagnitude: 30
+  bounceForceMagnitude: 150
+  mass: 5
 --- !u!82 &-3526804823816544464
 AudioSource:
   m_ObjectHideFlags: 0
