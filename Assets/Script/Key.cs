@@ -13,7 +13,7 @@ using UnityEngine;
 public class Key : MonoBehaviour
 {
     [Header("Basic Attribute")]
-    public KeyCode keyName;
+    [HideInInspector] public KeyCode keyName;
     private AudioSource audioSource;
 
     [Header("Physics Settings")]

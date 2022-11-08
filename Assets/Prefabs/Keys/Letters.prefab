@@ -112,10 +112,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyName: 97
-  audioSource: {fileID: -3056062949163199258}
-  pressForceMagnitude: 15
+  pressForceMagnitude: 30
   bounceForceMagnitude: 250
-  mass: 1
+  mass: 5
 --- !u!82 &-3056062949163199258
 AudioSource:
   m_ObjectHideFlags: 0
