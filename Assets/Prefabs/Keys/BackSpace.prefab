@@ -112,8 +112,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyName: 97
-  pressForceMagnitude: 30
-  bounceForceMagnitude: 150
+  pressForceMagnitude: -30
+  bounceForceMagnitude: -150
   mass: 5
 --- !u!82 &9095189581274327989
 AudioSource:
