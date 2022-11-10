@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 153596614002895059}
   - component: {fileID: 153596614002895060}
   - component: {fileID: 153596614002895061}
-  - component: {fileID: 153596614002895057}
   - component: {fileID: 9095189581274327989}
+  - component: {fileID: -1646169799532220764}
   m_Layer: 8
   m_Name: BackSpace
   m_TagString: Untagged
@@ -99,22 +99,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &153596614002895057
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 153596614002895062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05a9b290a51114f5193042494aefca41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  keyName: 97
-  pressForceMagnitude: 30
-  bounceForceMagnitude: 150
-  mass: 5
 --- !u!82 &9095189581274327989
 AudioSource:
   m_ObjectHideFlags: 0
@@ -211,3 +195,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-1646169799532220764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153596614002895062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05a9b290a51114f5193042494aefca41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyName: 0
+  pressForceMagnitude: 30
+  bounceForceMagnitude: 150
+  mass: 5

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 480731231870601052}
   - component: {fileID: 480731231870601048}
   - component: {fileID: 5254476204230356139}
+  - component: {fileID: -5764100999606599796}
   m_Layer: 8
   m_Name: Ctrl
   m_TagString: Untagged
@@ -106,7 +107,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 480731231870601055}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05a9b290a51114f5193042494aefca41, type: 3}
   m_Name: 
@@ -211,3 +212,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-5764100999606599796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480731231870601055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05a9b290a51114f5193042494aefca41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyName: 0
+  pressForceMagnitude: 20
+  bounceForceMagnitude: 500
+  mass: 0

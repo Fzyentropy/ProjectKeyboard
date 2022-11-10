@@ -346,6 +346,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &221737921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221737911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de9b2a44e911b4dd78e7172c92f72b5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dragMultiplier: 0.01
 --- !u!1 &281665903
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,6 +494,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &443455097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443455087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de9b2a44e911b4dd78e7172c92f72b5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dragMultiplier: 0.01
 --- !u!1001 &632835975
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -915,6 +941,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &786983550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786983540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de9b2a44e911b4dd78e7172c92f72b5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dragMultiplier: 0.01
 --- !u!1 &838047952
 GameObject:
   m_ObjectHideFlags: 0
@@ -1363,14 +1402,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.3832581, y: -0, z: -0, w: 0.9236413}
-  m_LocalPosition: {x: 7, y: 9, z: -10}
+  m_LocalRotation: {x: 0.43893385, y: -0, z: -0, w: 0.89851946}
+  m_LocalPosition: {x: 7.65, y: 8.3, z: -8.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 45.071, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 52.072, y: 0, z: 0}
 --- !u!1 &1072955286
 GameObject:
   m_ObjectHideFlags: 0
@@ -1673,6 +1712,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1238089927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238089917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de9b2a44e911b4dd78e7172c92f72b5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dragMultiplier: 0.01
 --- !u!1 &1273036898
 GameObject:
   m_ObjectHideFlags: 0
@@ -1823,6 +1875,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1322238130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322238120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de9b2a44e911b4dd78e7172c92f72b5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dragMultiplier: 0.01
 --- !u!1 &1363496817
 GameObject:
   m_ObjectHideFlags: 0
@@ -1837,7 +1902,6 @@ GameObject:
   - component: {fileID: 1363496820}
   - component: {fileID: 1363496819}
   - component: {fileID: 1363496818}
-  - component: {fileID: 1363496824}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -1952,64 +2016,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1363496824
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1363496817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6da43522623d4704e979466dc7650b65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Feedbacks: []
-  InitializationMode: 2
-  SafeMode: 3
-  Direction: 0
-  AutoChangeDirectionOnEnd: 0
-  AutoPlayOnStart: 0
-  AutoPlayOnEnable: 0
-  ForceTimescaleMode: 0
-  ForcedTimescaleMode: 1
-  DurationMultiplier: 1
-  RandomizeDuration: 0
-  RandomDurationMultiplier: {x: 0.5, y: 1.5}
-  DisplayFullDurationDetails: 0
-  PlayerTimescaleMode: 1
-  CooldownDuration: 0
-  InitialDelay: 0
-  CanPlay: 1
-  CanPlayWhileAlreadyPlaying: 1
-  ChanceToPlay: 100
-  FeedbacksIntensity: 1
-  Events:
-    TriggerMMFeedbacksEvents: 0
-    TriggerUnityEvents: 1
-    OnPlay:
-      m_PersistentCalls:
-        m_Calls: []
-    OnPause:
-      m_PersistentCalls:
-        m_Calls: []
-    OnResume:
-      m_PersistentCalls:
-        m_Calls: []
-    OnRevert:
-      m_PersistentCalls:
-        m_Calls: []
-    OnComplete:
-      m_PersistentCalls:
-        m_Calls: []
-  DebugActive: 0
-  FeedbacksList: []
-  KeepPlayModeChanges: 0
-  PerformanceMode: 0
-  ForceStopFeedbacksOnDisable: 1
-  references:
-    version: 2
-    RefIds: []
 --- !u!1001 &1419774644
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2079,6 +2085,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4996138570027138, guid: 18c5fed9cca812a458ccf567688e3a1f, type: 3}
       propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 64048515053340234, guid: 18c5fed9cca812a458ccf567688e3a1f, type: 3}
+      propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2152,6 +2162,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4315301396323988, guid: e082979a473bb914ab8af10a5d754993, type: 3}
       propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 64066660036517890, guid: e082979a473bb914ab8af10a5d754993, type: 3}
+      propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2238,7 +2252,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1902285780}
-  - component: {fileID: 1902285781}
+  - component: {fileID: 1902285782}
   m_Layer: 0
   m_Name: Control
   m_TagString: Untagged
@@ -2261,16 +2275,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1902285781
+--- !u!114 &1902285782
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1902285778}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cec35d1b26d83fd41a9080009c0725e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 14ebc6c9f8c996a4795168817eb82751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
@@ -2292,11 +2306,11 @@ MonoBehaviour:
     SerializationNodes:
     - Name: keyModelsDictionary
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[KeyboardInitializer+KeyTypes,
+      Data: 0|System.Collections.Generic.Dictionary`2[[KeyboardInitializerReverse+KeyTypes,
         Assembly-CSharp],[UnityEngine.GameObject, UnityEngine.CoreModule]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[KeyboardInitializer+KeyTypes,
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[KeyboardInitializerReverse+KeyTypes,
         Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
@@ -2414,7 +2428,7 @@ MonoBehaviour:
       Data: 
     - Name: specialKeys
       Entry: 7
-      Data: 2|System.Collections.Generic.Dictionary`2[[UnityEngine.Vector2, UnityEngine.CoreModule],[KeyboardInitializer+KeyTypes,
+      Data: 2|System.Collections.Generic.Dictionary`2[[UnityEngine.Vector2, UnityEngine.CoreModule],[KeyboardInitializerReverse+KeyTypes,
         Assembly-CSharp]], mscorlib
     - Name: comparer
       Entry: 7
@@ -2560,16 +2574,16 @@ MonoBehaviour:
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 3
+      Data: 4
     - Name: 
       Entry: 4
-      Data: 11
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
     - Name: $v
       Entry: 3
-      Data: 6
+      Data: 7
     - Name: 
       Entry: 8
       Data: 
@@ -2581,16 +2595,16 @@ MonoBehaviour:
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 4
+      Data: 3
     - Name: 
       Entry: 4
-      Data: 0
+      Data: 11
     - Name: 
       Entry: 8
       Data: 
     - Name: $v
       Entry: 3
-      Data: 7
+      Data: 6
     - Name: 
       Entry: 8
       Data: 
@@ -2667,6 +2681,18 @@ PrefabInstance:
     - target: {fileID: 5149704413132119877, guid: 48d5da29390474061ba9ccbb1b301795, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5149704413132119878, guid: 48d5da29390474061ba9ccbb1b301795, type: 3}
+      propertyPath: pressForce.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5149704413132119878, guid: 48d5da29390474061ba9ccbb1b301795, type: 3}
+      propertyPath: bounceForce.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5149704413132119878, guid: 48d5da29390474061ba9ccbb1b301795, type: 3}
+      propertyPath: supportingForce.y
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48d5da29390474061ba9ccbb1b301795, type: 3}

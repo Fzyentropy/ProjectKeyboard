@@ -9,7 +9,7 @@ using UnityEngine.UI;
 using DG.Tweening;
 using Unity.VisualScripting;
 
-public class KeyboardInitializer : SerializedMonoBehaviour
+public class KeyboardInitializerReverse : SerializedMonoBehaviour
 {
     [Header("Keyboard Settings")]
     [SerializeField] private GameObject keyBoard;
@@ -97,7 +97,8 @@ public class KeyboardInitializer : SerializedMonoBehaviour
 
         // generate ceiling
         // if (!keyboardCeiling.Equals(null)) 
-        Vector3 ceilingPos = new Vector3(0, keyAltitude + keyHeight/2, 0);
+        // Vector3 ceilingPos = new Vector3(0, keyAltitude + keyHeight/2, 0);
+        Vector3 ceilingPos = new Vector3(0, keyAltitude + keyHeight+3, 0);
         Instantiate(keyboardCeiling, ceilingPos, Quaternion.Euler(0, 0, 0));
     }
     
@@ -150,7 +151,7 @@ public class KeyboardInitializer : SerializedMonoBehaviour
                 GameObject currentKey = Instantiate(keyModelsDictionary[currentKeyType], currentKeyPos, Quaternion.Euler(0, 0,0));
                 
                 // bind physical key
-                currentKey.GetComponent<Key>().keyName = activeKeys.activeKeysInSequence[placedKeysNum];
+                currentKey.GetComponent<KeyReverse>().keyName = activeKeys.activeKeysInSequence[placedKeysNum];
                 placedKeysNum++;
                 
                 keysOnKeyboard.Add(currentKey);
