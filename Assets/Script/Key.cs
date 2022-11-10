@@ -61,11 +61,26 @@ public class Key : MonoBehaviour
     /// </summary>
     private void PressKey()
     {
-        if (Input.GetKey(keyName))
+        if (keyName == KeyCode.Space)
         {
-            print(keyName);
-            keyRb.AddForce(pressForce, ForceMode.Impulse);
-            audioSource.Play();
+            if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl) ||
+                Input.GetKey(KeyCode.LeftAlt) || Input.GetKey(KeyCode.RightAlt) || Input.GetKey(KeyCode.LeftMeta) ||
+                Input.GetKey(KeyCode.RightMeta)|| Input.GetKey(KeyCode.Space))
+            {
+                print(keyName);
+                keyRb.AddForce(pressForce, ForceMode.Impulse);
+                audioSource.Play();
+            }
+        }
+        else
+        {
+            if (Input.GetKey(keyName))
+            {
+                print(keyName);
+                
+                keyRb.AddForce(pressForce, ForceMode.Impulse);
+                audioSource.Play();
+            }
         }
     }
     

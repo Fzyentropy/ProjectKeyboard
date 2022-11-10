@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fafd9ca80d42ea147955a570b7ff417a, type: 2}
+  - {fileID: 2100000, guid: 98f9943149e70e84f969f66047eb997f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -112,8 +112,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyName: 97
-  pressForceMagnitude: 30
-  bounceForceMagnitude: 150
+  pressForceMagnitude: -30
+  bounceForceMagnitude: -150
   mass: 5
 --- !u!82 &-3056062949163199258
 AudioSource:

@@ -9,6 +9,14 @@ using UnityEngine.UI;
 using DG.Tweening;
 using Unity.VisualScripting;
 
+/// <summary>
+/// TO DO:
+/// 1. fix the key starting point
+/// 2. keyboard generating position
+/// 3. Material change adapt to the key starting position
+/// 4. collider completely in trigger 
+/// </summary>
+
 public class KeyboardInitializer : SerializedMonoBehaviour
 {
     [Header("Keyboard Settings")]
@@ -35,6 +43,9 @@ public class KeyboardInitializer : SerializedMonoBehaviour
     [Header("Key Settings")] [Range(0f, 2f)]
     [SerializeField] private float keyTravelDistance;
     private float keyAltitude;
+    [SerializeField] private Material leftKeysMat;
+    [SerializeField] private Material rightKeysMat;
+    
     
     // use length as the key to look up key models
     [DictionaryDrawerSettings(KeyLabel = "Key Type", ValueLabel = "Key Models")]
@@ -132,23 +143,26 @@ public class KeyboardInitializer : SerializedMonoBehaviour
                     currentKeyType = specialKeys[currentKeyLoc];
                 
                 currentKeySize = keySize[currentKeyType];
-
-                if (row == keyCountEachRow.Count - 1)
-                {
-                    currentKeyPos.x = currentKeySize.x;
-                }
-                else
-                {
+                //
+                // if (row == keyCountEachRow.Count - 1)
+                // {
+                //     currentKeyPos.x = currentKeySize.x;
+                // }
+                // else
+                // {
                     if (col != 0)
                         // move to the next placing position horizontally
                         currentKeyPos.x += previousKeySize.x / 2 + currentKeySize.x / 2 + keyboardGapX;
                     else
                         currentKeyPos.x += currentKeySize.x / 2;
-                }
+                // }
 
                 // place the key
                 GameObject currentKey = Instantiate(keyModelsDictionary[currentKeyType], currentKeyPos, Quaternion.Euler(0, 0,0));
                 
+                if (row != keyCountEachRow.Count - 1)
+                    SetKeyMaterial(currentKey);
+
                 // bind physical key
                 currentKey.GetComponent<Key>().keyName = activeKeys.activeKeysInSequence[placedKeysNum];
                 placedKeysNum++;
@@ -164,6 +178,15 @@ public class KeyboardInitializer : SerializedMonoBehaviour
             currentKeyPos.z -= currentKeySize.z + keyboardGapZ;
         }
     }
+
+    private void SetKeyMaterial(GameObject currentKey)
+    {
+        if (currentKey.transform.position.x < (keySize[KeyTypes.Letters].x * 15 + 13 * keyboardGapX) / 2)
+            currentKey.GetComponent<MeshRenderer>().material = leftKeysMat;
+        else currentKey.GetComponent<MeshRenderer>().material = rightKeysMat;
+    }
+    
+    
 
     // width = 15 units, Height = 5 units
     // key types: 1 unit, 1.25 units, 1.5 units, 1.75 units, 2 units, 2.25 units, 2.75 units, 6.25 units
