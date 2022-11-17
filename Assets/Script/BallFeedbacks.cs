@@ -22,20 +22,16 @@ public class BallFeedbacks : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerExit(Collider other)
     {
-        // if (collision.collider.tag.Equals("Key") & transform.position.y != )
-        // {
-        //     landFeedback?.PlayFeedbacks();
-        // }
-        if (collision.collider.tag.Equals("Pole")) hitPoleFeedback?.PlayFeedbacks();
-    }
-
-    private void OnCollisionExit(Collision other)
-    {
-        if (other.collider.tag.Equals("Key") & transform.position.y < 3.8f)
+        if (other.tag.Equals("Key") & transform.position.y < 3.8f)
         {
             kickFeedback?.PlayFeedbacks();
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.tag.Equals("Pole")) hitPoleFeedback?.PlayFeedbacks();
     }
 }
