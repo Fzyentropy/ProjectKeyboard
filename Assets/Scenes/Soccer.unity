@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.57481617, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -152,6 +152,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1902285780}
+  - {fileID: 1320630061}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -304,6 +305,103 @@ Transform:
   - {fileID: 281665907}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &193279881
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 193279885}
+  - component: {fileID: 193279884}
+  - component: {fileID: 193279883}
+  - component: {fileID: 193279882}
+  m_Layer: 9
+  m_Name: CollisionField
+  m_TagString: Key
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &193279882
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193279881}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.3164567, z: 1}
+  m_Center: {x: 0, y: 0.1582284, z: 0}
+--- !u!23 &193279883
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193279881}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &193279884
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193279881}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &193279885
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193279881}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.76, y: 0.44, z: -2.01}
+  m_LocalScale: {x: 15.7483835, y: 1, z: 4.8102984}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &281665903
 GameObject:
@@ -1675,7 +1773,7 @@ GameObject:
   - component: {fileID: 979269812}
   - component: {fileID: 979269813}
   m_Layer: 0
-  m_Name: BounceUpFeedback
+  m_Name: HitPoleFeedback
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1748,19 +1846,19 @@ MonoBehaviour:
         m_Calls: []
   DebugActive: 0
   FeedbacksList:
-  - rid: 5066001171434962944
+  - rid: 5066001285493030937
   KeepPlayModeChanges: 0
   PerformanceMode: 0
   ForceStopFeedbacksOnDisable: 1
   references:
     version: 2
     RefIds:
-    - rid: 5066001171434962944
-      type: {class: MMF_SquashAndStretch, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
+    - rid: 5066001285493030937
+      type: {class: MMF_MMSoundManagerSound, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks.MMTools}
       data:
         Active: 1
-        UniqueID: -208079712
-        Label: Squash and Stretch
+        UniqueID: -471562596
+        Label: MMSoundManager Sound
         Channel: 0
         Chance: 100
         DisplayColor: {r: 0, g: 0, b: 0, a: 1}
@@ -1790,67 +1888,80 @@ MonoBehaviour:
         RandomDurationMultiplier: {x: 0.5, y: 2}
         Owner: {fileID: 979269813}
         DebugActive: 0
-        SquashAndStretchTarget: {fileID: 1363496823}
-        Mode: 0
-        Axis: 3
-        AnimateScaleDuration: 0.2
-        RemapCurveZero: 1
-        RemapCurveOne: 2
-        Offset: 0
-        AnimateCurve:
-          serializedVersion: 2
-          m_Curve:
-          - serializedVersion: 3
-            time: 0
-            value: 0
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          - serializedVersion: 3
-            time: 0.28033316
-            value: 0.31178138
-            inSlope: -2.589286
-            outSlope: -2.589286
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0.13132289
-            outWeight: 0.2118484
-          - serializedVersion: 3
-            time: 0.2958374
-            value: 0.032621995
-            inSlope: 0.79638094
-            outSlope: 0.79638094
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 1
-          - serializedVersion: 3
-            time: 0.497623
-            value: 0.9980034
-            inSlope: -0.2841794
-            outSlope: -0.2841794
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0.33333334
-            outWeight: 0.40775084
-          - serializedVersion: 3
-            time: 1
-            value: 0
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
-        AllowAdditivePlays: 0
-        DetermineScaleOnPlay: 0
-        DestinationScale: 2
+        Sfx: {fileID: 8300000, guid: 569b6a71dac2743578e92155a4bbe055, type: 3}
+        RandomSfx: []
+        SequentialOrder: 0
+        SequentialOrderHoldLast: 0
+        SequentialOrderHoldCooldownDuration: 2
+        MinVolume: 1
+        MaxVolume: 1
+        MinPitch: 1
+        MaxPitch: 1
+        PlaybackTime: {x: 0, y: 0}
+        MmSoundManagerTrack: 0
+        ID: 0
+        AudioGroup: {fileID: 0}
+        RecycleAudioSource: {fileID: 0}
+        Loop: 0
+        Persistent: 0
+        DoNotPlayIfClipAlreadyPlaying: 0
+        StopSoundOnFeedbackStop: 0
+        Fade: 0
+        FadeInitialVolume: 0
+        FadeDuration: 1
+        FadeTween:
+          MMTweenDefinitionType: 0
+          MMTweenCurve: 9
+          Curve:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 1
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+          Initialized: 0
+        SoloSingleTrack: 0
+        SoloAllTracks: 0
+        AutoUnSoloOnEnd: 0
+        PanStereo: 0
+        SpatialBlend: 0
+        BypassEffects: 0
+        BypassListenerEffects: 0
+        BypassReverbZones: 0
+        Priority: 128
+        ReverbZoneMix: 1
+        DopplerLevel: 1
+        Spread: 0
+        RolloffMode: 0
+        MinDistance: 1
+        MaxDistance: 500
+        DrawGizmos: 0
+        GizmosCenter: {fileID: 0}
+        MinDistanceColor: {r: 0.37254903, g: 0.61960787, b: 0.627451, a: 1}
+        MaxDistanceColor: {r: 1, g: 0.27058825, b: 0, a: 1}
+        TestPlayButton:
+          ButtonText: Debug Play Sound
+        TestStopButton:
+          ButtonText: Debug Stop Sound
+        ResetSequentialIndexButton:
+          ButtonText: Reset Sequential Index
 --- !u!1001 &1044801082
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2514,6 +2625,54 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 2.220446e-16, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1320630060
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1320630061}
+  - component: {fileID: 1320630062}
+  m_Layer: 6
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1320630061
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320630060}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 49160831}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1320630062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320630060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614edb33c38bcf949846d5675f29f9fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AutomaticallyUnparentOnAwake: 1
+  settingsSo: {fileID: 11400000, guid: 07ea3ff88e1ecb84d91f58aa804badc6, type: 2}
+  AudioSourcePoolSize: 10
+  PoolCanExpand: 1
 --- !u!4 &1359454946 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9007570025741963626, guid: 1bdab9db2bfab4445a1302c2bc3818e4, type: 3}
@@ -2533,6 +2692,7 @@ GameObject:
   - component: {fileID: 1363496820}
   - component: {fileID: 1363496819}
   - component: {fileID: 1363496818}
+  - component: {fileID: 1363496824}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Ball
@@ -2646,9 +2806,25 @@ Transform:
   m_Children:
   - {fileID: 979269812}
   - {fileID: 1986452030}
+  - {fileID: 1679999272}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1363496824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363496817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb14f0c8afdbf4ab4928a6e05a7dfc24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitPoleFeedback: {fileID: 979269813}
+  landFeedback: {fileID: 1679999273}
+  kickFeedback: {fileID: 1679999273}
 --- !u!1 &1576243477
 GameObject:
   m_ObjectHideFlags: 0
@@ -2708,6 +2884,208 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreText: {fileID: 642586975}
+--- !u!1 &1679999271
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1679999272}
+  - component: {fileID: 1679999273}
+  m_Layer: 0
+  m_Name: kickFeedback
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1679999272
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679999271}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1363496823}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1679999273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679999271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6da43522623d4704e979466dc7650b65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Feedbacks: []
+  InitializationMode: 2
+  SafeMode: 3
+  Direction: 0
+  AutoChangeDirectionOnEnd: 0
+  AutoPlayOnStart: 0
+  AutoPlayOnEnable: 0
+  ForceTimescaleMode: 0
+  ForcedTimescaleMode: 1
+  DurationMultiplier: 1
+  RandomizeDuration: 0
+  RandomDurationMultiplier: {x: 0.5, y: 1.5}
+  DisplayFullDurationDetails: 0
+  PlayerTimescaleMode: 1
+  CooldownDuration: 0
+  InitialDelay: 0
+  CanPlay: 1
+  CanPlayWhileAlreadyPlaying: 1
+  ChanceToPlay: 100
+  FeedbacksIntensity: 1
+  Events:
+    TriggerMMFeedbacksEvents: 0
+    TriggerUnityEvents: 1
+    OnPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    OnPause:
+      m_PersistentCalls:
+        m_Calls: []
+    OnResume:
+      m_PersistentCalls:
+        m_Calls: []
+    OnRevert:
+      m_PersistentCalls:
+        m_Calls: []
+    OnComplete:
+      m_PersistentCalls:
+        m_Calls: []
+  DebugActive: 0
+  FeedbacksList:
+  - rid: 5066001285493030939
+  KeepPlayModeChanges: 0
+  PerformanceMode: 0
+  ForceStopFeedbacksOnDisable: 1
+  references:
+    version: 2
+    RefIds:
+    - rid: 5066001285493030939
+      type: {class: MMF_MMSoundManagerSound, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks.MMTools}
+      data:
+        Active: 1
+        UniqueID: -583899265
+        Label: MMSoundManager Sound
+        Channel: 0
+        Chance: 100
+        DisplayColor: {r: 0, g: 0, b: 0, a: 1}
+        Timing:
+          TimescaleMode: 0
+          ExcludeFromHoldingPauses: 0
+          ContributeToTotalDuration: 1
+          InitialDelay: 0
+          CooldownDuration: 0
+          InterruptsOnStop: 1
+          NumberOfRepeats: 0
+          RepeatForever: 0
+          DelayBetweenRepeats: 1
+          MMFeedbacksDirectionCondition: 0
+          PlayDirection: 0
+          ConstantIntensity: 0
+          UseIntensityInterval: 0
+          IntensityIntervalMin: 0
+          IntensityIntervalMax: 0
+          Sequence: {fileID: 0}
+          TrackID: 0
+          Quantized: 0
+          TargetBPM: 120
+        RandomizeOutput: 0
+        RandomMultiplier: {x: 0.8, y: 1}
+        RandomizeDuration: 0
+        RandomDurationMultiplier: {x: 0.5, y: 2}
+        Owner: {fileID: 1679999273}
+        DebugActive: 0
+        Sfx: {fileID: 0}
+        RandomSfx:
+        - {fileID: 8300000, guid: 67fc01c96477a412ba2a002f82bcfc06, type: 3}
+        - {fileID: 8300000, guid: 5c7633f7612344b6b82d1c79b66aa536, type: 3}
+        SequentialOrder: 0
+        SequentialOrderHoldLast: 0
+        SequentialOrderHoldCooldownDuration: 2
+        MinVolume: 1
+        MaxVolume: 1
+        MinPitch: 1
+        MaxPitch: 1
+        PlaybackTime: {x: 0, y: 0}
+        MmSoundManagerTrack: 0
+        ID: 0
+        AudioGroup: {fileID: 0}
+        RecycleAudioSource: {fileID: 0}
+        Loop: 0
+        Persistent: 0
+        DoNotPlayIfClipAlreadyPlaying: 0
+        StopSoundOnFeedbackStop: 0
+        Fade: 0
+        FadeInitialVolume: 0
+        FadeDuration: 1
+        FadeTween:
+          MMTweenDefinitionType: 0
+          MMTweenCurve: 9
+          Curve:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 1
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+          Initialized: 0
+        SoloSingleTrack: 0
+        SoloAllTracks: 0
+        AutoUnSoloOnEnd: 0
+        PanStereo: 0
+        SpatialBlend: 0
+        BypassEffects: 0
+        BypassListenerEffects: 0
+        BypassReverbZones: 0
+        Priority: 128
+        ReverbZoneMix: 1
+        DopplerLevel: 1
+        Spread: 0
+        RolloffMode: 0
+        MinDistance: 1
+        MaxDistance: 500
+        DrawGizmos: 0
+        GizmosCenter: {fileID: 0}
+        MinDistanceColor: {r: 0.37254903, g: 0.61960787, b: 0.627451, a: 1}
+        MaxDistanceColor: {r: 1, g: 0.27058825, b: 0, a: 1}
+        TestPlayButton:
+          ButtonText: Debug Play Sound
+        TestStopButton:
+          ButtonText: Debug Stop Sound
+        ResetSequentialIndexButton:
+          ButtonText: Reset Sequential Index
 --- !u!1 &1902285778
 GameObject:
   m_ObjectHideFlags: 0
@@ -3101,7 +3479,7 @@ GameObject:
   - component: {fileID: 1986452030}
   - component: {fileID: 1986452031}
   m_Layer: 0
-  m_Name: DropDownFeedback
+  m_Name: LandFeedback
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3173,13 +3551,123 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   DebugActive: 0
-  FeedbacksList: []
+  FeedbacksList:
+  - rid: 5066001285493030938
   KeepPlayModeChanges: 0
   PerformanceMode: 0
   ForceStopFeedbacksOnDisable: 1
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 5066001285493030938
+      type: {class: MMF_MMSoundManagerSound, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks.MMTools}
+      data:
+        Active: 1
+        UniqueID: -1673757106
+        Label: MMSoundManager Sound
+        Channel: 0
+        Chance: 100
+        DisplayColor: {r: 0, g: 0, b: 0, a: 1}
+        Timing:
+          TimescaleMode: 0
+          ExcludeFromHoldingPauses: 0
+          ContributeToTotalDuration: 1
+          InitialDelay: 0
+          CooldownDuration: 0
+          InterruptsOnStop: 1
+          NumberOfRepeats: 0
+          RepeatForever: 0
+          DelayBetweenRepeats: 1
+          MMFeedbacksDirectionCondition: 0
+          PlayDirection: 0
+          ConstantIntensity: 0
+          UseIntensityInterval: 0
+          IntensityIntervalMin: 0
+          IntensityIntervalMax: 0
+          Sequence: {fileID: 0}
+          TrackID: 0
+          Quantized: 0
+          TargetBPM: 120
+        RandomizeOutput: 0
+        RandomMultiplier: {x: 0.8, y: 1}
+        RandomizeDuration: 0
+        RandomDurationMultiplier: {x: 0.5, y: 2}
+        Owner: {fileID: 1986452031}
+        DebugActive: 0
+        Sfx: {fileID: 0}
+        RandomSfx: []
+        SequentialOrder: 0
+        SequentialOrderHoldLast: 0
+        SequentialOrderHoldCooldownDuration: 2
+        MinVolume: 1
+        MaxVolume: 1
+        MinPitch: 1
+        MaxPitch: 1
+        PlaybackTime: {x: 0, y: 0}
+        MmSoundManagerTrack: 0
+        ID: 0
+        AudioGroup: {fileID: 0}
+        RecycleAudioSource: {fileID: 0}
+        Loop: 0
+        Persistent: 0
+        DoNotPlayIfClipAlreadyPlaying: 0
+        StopSoundOnFeedbackStop: 0
+        Fade: 0
+        FadeInitialVolume: 0
+        FadeDuration: 1
+        FadeTween:
+          MMTweenDefinitionType: 0
+          MMTweenCurve: 9
+          Curve:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 1
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+          Initialized: 0
+        SoloSingleTrack: 0
+        SoloAllTracks: 0
+        AutoUnSoloOnEnd: 0
+        PanStereo: 0
+        SpatialBlend: 0
+        BypassEffects: 0
+        BypassListenerEffects: 0
+        BypassReverbZones: 0
+        Priority: 128
+        ReverbZoneMix: 1
+        DopplerLevel: 1
+        Spread: 0
+        RolloffMode: 0
+        MinDistance: 1
+        MaxDistance: 500
+        DrawGizmos: 0
+        GizmosCenter: {fileID: 0}
+        MinDistanceColor: {r: 0.37254903, g: 0.61960787, b: 0.627451, a: 1}
+        MaxDistanceColor: {r: 1, g: 0.27058825, b: 0, a: 1}
+        TestPlayButton:
+          ButtonText: Debug Play Sound
+        TestStopButton:
+          ButtonText: Debug Stop Sound
+        ResetSequentialIndexButton:
+          ButtonText: Reset Sequential Index
 --- !u!1 &2127565043
 GameObject:
   m_ObjectHideFlags: 0

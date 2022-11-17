@@ -69,7 +69,7 @@ public class Key : MonoBehaviour
             {
                 print(keyName);
                 keyRb.AddForce(pressForce, ForceMode.Impulse);
-                audioSource.Play();
+                // audioSource.Play();
             }
         }
         else
@@ -79,7 +79,7 @@ public class Key : MonoBehaviour
                 print(keyName);
                 
                 keyRb.AddForce(pressForce, ForceMode.Impulse);
-                audioSource.Play();
+                // audioSource.Play();
             }
         }
     }
