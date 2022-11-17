@@ -61,15 +61,11 @@ Material:
   - _DETAILMAPBLENDINGMODE_ADD
   - _TEXTUREBLENDINGMODE_MULTIPLY
   - _UNITYSHADOW_OCCLUSION
-  m_InvalidKeywords:
-  - DR_CEL_EXTRA_ON
-  - _CELPRIMARYMODE_SINGLE
-  - _QUIBLI_GRADIENT
-  - _UNITYSHADOWMODE_NONE
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 1
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: -1
   stringTagMap:
     RenderType: Opaque
   disabledShaderPasses: []
