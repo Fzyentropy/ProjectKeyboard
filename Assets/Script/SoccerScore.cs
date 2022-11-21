@@ -8,7 +8,8 @@ using TMPro;
 public class SoccerScore : MonoBehaviour
 {
     private float SScore = 0;
-    public TextMeshProUGUI ScoreText; 
+    public TextMeshProUGUI ScoreText;
+    [SerializeField] private GameObject soccer;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,19 +24,19 @@ public class SoccerScore : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Ball")
+        if (other.CompareTag("Ball"))
         {
             SScore += 1f;
             StartCoroutine(KickOff());
+            soccer.tag = "Untagged";
         }
     }
 
     IEnumerator KickOff()
     {
         yield return new WaitForSeconds(2);
-
-        GameObject.FindWithTag("Ball").transform.position = new Vector3(7.5f, 3.5f, -3.5f);
-
+        soccer.transform.position = new Vector3(7.5f, 3.5f, -3.5f);
+        soccer.tag = "Ball";
         // yield return null;
     }
 }

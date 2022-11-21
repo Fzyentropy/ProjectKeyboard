@@ -2467,9 +2467,11 @@ Transform:
   m_LocalPosition: {x: 7.76, y: 0.44, z: -2.01}
   m_LocalScale: {x: 15.7483835, y: 1, z: 4.8102984}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1266377675}
+  - {fileID: 1576243480}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1218270419
 GameObject:
@@ -2789,13 +2791,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1266377672}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.52, y: 0.73, z: -2.05}
-  m_LocalScale: {x: 0.6, y: 1.45, z: 4.41}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.58926684, y: 0.29000002, z: -0.008315484}
+  m_LocalScale: {x: 0.038099147, y: 1.45, z: 0.916783}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 1136436408}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1266377676
 MonoBehaviour:
@@ -2810,6 +2812,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreText: {fileID: 923774328}
+  soccer: {fileID: 1363496817}
 --- !u!1 &1273036898
 GameObject:
   m_ObjectHideFlags: 0
@@ -3040,7 +3043,7 @@ GameObject:
   - component: {fileID: 1363496818}
   - component: {fileID: 1363496824}
   m_Layer: 0
-  m_Name: Ball
+  m_Name: Soccer
   m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3209,13 +3212,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1576243477}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.04, y: 0.5, z: -2.08}
-  m_LocalScale: {x: 0.83, y: 2.9, z: 4.64}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.58926684, y: 0.060000002, z: -0.014552098}
+  m_LocalScale: {x: 0.05270382, y: 2.9, z: 0.96459705}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 1136436408}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1576243481
 MonoBehaviour:
@@ -3230,6 +3233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreText: {fileID: 642586975}
+  soccer: {fileID: 1363496817}
 --- !u!1 &1639110575
 GameObject:
   m_ObjectHideFlags: 0
