@@ -10,30 +10,26 @@ using Sirenix.OdinInspector;
 public class Key : MonoBehaviour
 {
     [Header("Basic Attribute")]
+    private Material keyMaterial;
     [HideInInspector] public KeyCode keyName;
     [HideInInspector] public float initDelay;
-    private Material keyMaterial;
 
     [Header("Key Movement")]
     private Rigidbody keyRb;
-    
-    [HideInInspector] public float travelDistance = 0f;
-    
     private float originalY;
     private float destinationY;
     
-    [SerializeField] private float pressDownTime = 0.2f;
-    [SerializeField] private float bounceUpTime = 0.1f;
+    [HideInInspector] public float travelDistance = 0f;
 
-    [SerializeField] private bool isChargeable = false;
+    [HideInInspector] public float pressDownTime = 0.2f;
+    [HideInInspector] public float bounceUpTime = 0.1f;
+
+    [HideInInspector] public bool isChargeable;
     
-    [ShowIf("isChargeable")]
-    [BoxGroup("Key Charge Settings")]
-    [SerializeField] private float maxChargeTime, maxProtrudeDistance = 1f;
-    private float chargeTime = 0f;
-    private float protrudeDistance = 0f;
+    [Header("Key Charge Settings")]
     private Color startColor;
-    [SerializeField] private Color chargedColor;
+    [HideInInspector] public Color chargedColor;
+    [HideInInspector] public float maxChargeTime, maxProtrudeDistance, chargeTime, protrudeDistance;
     
     // [BoxGroup("Key Charge Settings")]
 
@@ -76,7 +72,7 @@ public class Key : MonoBehaviour
 
     private void InitializeChargeSetting()
     {
-        maxProtrudeDistance += travelDistance;
+        // maxProtrudeDistance += travelDistance;
         keyMaterial = GetComponent<Renderer>().material;
         startColor = keyMaterial.color;
     }

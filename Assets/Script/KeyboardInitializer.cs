@@ -45,6 +45,19 @@ public class KeyboardInitializer : SerializedMonoBehaviour
     [SerializeField] private Material leftKeysMat;
     [SerializeField] private Material rightKeysMat;
     
+    [SerializeField] private float pressDownTime = 0.2f;
+    [SerializeField] private float bounceUpTime = 0.1f;
+
+    [SerializeField] private bool isChargeable = false;
+    
+    [ShowIf("isChargeable")]
+    [BoxGroup("Key Charge Settings")]
+    [SerializeField] private float maxChargeTime, maxProtrudeDistance = 1f;
+    private float chargeTime = 0f;
+    private float protrudeDistance = 0f;
+    private Color startColor;
+    [SerializeField] private Color chargedColor;
+    
     
     // use length as the key to look up key models
     [DictionaryDrawerSettings(KeyLabel = "Key Type", ValueLabel = "Key Models")]
@@ -150,11 +163,8 @@ public class KeyboardInitializer : SerializedMonoBehaviour
                     SetKeyMaterial(currentKey);
                 
                 // set basic key attributes
-                Key keyAttribute = currentKey.GetComponent<Key>();
-                keyAttribute.keyName = activeKeys.activeKeysInSequence[placedKeysNum];
-                keyAttribute.travelDistance = keyTravelDistance;
-                keyAttribute.initDelay = 0.2f * (col + 1);
-
+                SetKeyBasicAttribute(currentKey, placedKeysNum, col);
+                
                 placedKeysNum++;
 
                 keysOnKeyboard.Add(currentKey);
@@ -167,6 +177,25 @@ public class KeyboardInitializer : SerializedMonoBehaviour
             // move to the next row
             currentKeyPos.z -= currentKeySize.z + keyboardGapZ;
         }
+    }
+
+    private void SetKeyBasicAttribute(GameObject currentKey, int placedKeysNum, int col)
+    {
+        Key keyAttribute = currentKey.GetComponent<Key>();
+        keyAttribute.keyName = activeKeys.activeKeysInSequence[placedKeysNum];
+        keyAttribute.travelDistance = keyTravelDistance;
+        keyAttribute.initDelay = 0.2f * (col + 1);
+
+        keyAttribute.pressDownTime = pressDownTime;
+        keyAttribute.bounceUpTime = bounceUpTime;
+
+        keyAttribute.isChargeable = isChargeable;
+
+        keyAttribute.maxChargeTime = maxChargeTime;
+        keyAttribute.maxProtrudeDistance = maxProtrudeDistance;
+        keyAttribute.chargeTime = chargeTime;
+        keyAttribute.protrudeDistance = protrudeDistance;
+        keyAttribute.chargedColor = chargedColor;
     }
 
     private void SetKeyMaterial(GameObject currentKey)
