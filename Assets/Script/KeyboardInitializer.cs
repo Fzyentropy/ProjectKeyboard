@@ -47,15 +47,16 @@ public class KeyboardInitializer : SerializedMonoBehaviour
     
     [SerializeField] private float pressDownTime = 0.2f;
     [SerializeField] private float bounceUpTime = 0.1f;
+    
+    [SerializeField] private float maxProtrudeDistance = 1f;
 
     [SerializeField] private bool isChargeable = false;
     
     [ShowIf("isChargeable")]
     [BoxGroup("Key Charge Settings")]
-    [SerializeField] private float maxChargeTime, maxProtrudeDistance = 1f;
-    private float chargeTime = 0f;
-    private float protrudeDistance = 0f;
-    private Color startColor;
+    [SerializeField] private float maxChargeTime;
+    [ShowIf("isChargeable")]
+    [BoxGroup("Key Charge Settings")]
     [SerializeField] private Color chargedColor;
     
     
@@ -193,8 +194,6 @@ public class KeyboardInitializer : SerializedMonoBehaviour
 
         keyAttribute.maxChargeTime = maxChargeTime;
         keyAttribute.maxProtrudeDistance = maxProtrudeDistance;
-        keyAttribute.chargeTime = chargeTime;
-        keyAttribute.protrudeDistance = protrudeDistance;
         keyAttribute.chargedColor = chargedColor;
     }
 

@@ -62,6 +62,8 @@ public class Key : MonoBehaviour
         // the start and end point of each key when pressed down
         originalY = travelDistance;
         destinationY = 0;
+
+        protrudeDistance = maxProtrudeDistance;
         
         // charge related
         if (isChargeable) InitializeChargeSetting();
@@ -130,7 +132,6 @@ public class Key : MonoBehaviour
                 DG.Tweening.Sequence moveUpSequence = DOTween.Sequence();
                 moveUpSequence.Append(keyRb.DOMoveY(originalY + protrudeDistance, bounceUpTime))
                     .Append(keyRb.DOMoveY(originalY, 0.1f));
-                protrudeDistance = 0f;
             }
         }
         else

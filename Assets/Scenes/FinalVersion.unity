@@ -816,6 +816,12 @@ MonoBehaviour:
   keyTravelDistance: 1
   leftKeysMat: {fileID: 2100000, guid: 6ef9c895f7bf74dfaacfb374532476db, type: 2}
   rightKeysMat: {fileID: 2100000, guid: 017295119a0c0482496dc7ea028992bb, type: 2}
+  pressDownTime: 0.2
+  bounceUpTime: 0.1
+  isChargeable: 0
+  maxChargeTime: 0.5
+  maxProtrudeDistance: 1
+  chargedColor: {r: 1, g: 0, b: 0, a: 0}
 --- !u!1 &1466712850
 GameObject:
   m_ObjectHideFlags: 0
