@@ -112,9 +112,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyName: 97
-  pressForceMagnitude: -12
-  bounceForceMagnitude: -150
-  mass: 5
+  initDelay: 0
+  chargedColor: {r: 1, g: 0.01021558, b: 0, a: 0}
+  travelDistance: 0.5
+  pressDownTime: 0.2
+  bounceUpTime: 0.1
+  isChargeable: 1
+  maxChargeTime: 2
+  maxProtrudeDistance: 1
+  chargeFeedback: {fileID: 0}
 --- !u!82 &-3056062949163199258
 AudioSource:
   m_ObjectHideFlags: 0

@@ -22,8 +22,7 @@ public class KeyboardInitializer : SerializedMonoBehaviour
     [Header("Keyboard Settings")]
     [SerializeField] private GameObject keyBoard;
     [SerializeField] private Vector3 keyboardPos;
-    [SerializeField] private GameObject keyboardCeiling;
-    
+
     // keys in use
     [SerializeField] private ActiveKeys activeKeys;
     
@@ -101,15 +100,9 @@ public class KeyboardInitializer : SerializedMonoBehaviour
         }
         
         // get key height
-        float keyHeight = keySize[KeyTypes.Letters].y;
+        // float keyHeight = keySize[KeyTypes.Letters].y;
         // calculate and move the key altitude: the distance to the ground (y=0)
-        keyAltitude = keyboardPos.y + keyTravelDistance + keyHeight/2;
-        transform.DOLocalMoveY(keyAltitude, 0f);
-
-        // generate ceiling
-        // if (!keyboardCeiling.Equals(null)) 
-        Vector3 ceilingPos = new Vector3(0, keyAltitude + keyHeight/2, 0);
-        Instantiate(keyboardCeiling, ceilingPos, Quaternion.Euler(0, 0, 0));
+        // keyAltitude = keyboardPos.y + keyTravelDistance + keyHeight/2;
     }
     
     /// <summary>
@@ -121,7 +114,7 @@ public class KeyboardInitializer : SerializedMonoBehaviour
         startingKeyPos.y = keyAltitude;
         
         // the current key that is placing
-        Vector3 currentKeyPos = new Vector3(startingKeyPos.x, keyAltitude, startingKeyPos.z);
+        Vector3 currentKeyPos = new Vector3(startingKeyPos.x, 0, startingKeyPos.z);
         Vector3 currentKeySize = Vector3.zero;
         Vector3 previousKeySize = Vector3.zero;
         int placedKeysNum = 0;
@@ -143,30 +136,27 @@ public class KeyboardInitializer : SerializedMonoBehaviour
                     currentKeyType = specialKeys[currentKeyLoc];
                 
                 currentKeySize = keySize[currentKeyType];
-                //
-                // if (row == keyCountEachRow.Count - 1)
-                // {
-                //     currentKeyPos.x = currentKeySize.x;
-                // }
-                // else
-                // {
-                    if (col != 0)
-                        // move to the next placing position horizontally
-                        currentKeyPos.x += previousKeySize.x / 2 + currentKeySize.x / 2 + keyboardGapX;
-                    else
-                        currentKeyPos.x += currentKeySize.x / 2;
-                // }
+          
+                if (col != 0)
+                    // move to the next placing position horizontally
+                    currentKeyPos.x += previousKeySize.x / 2 + currentKeySize.x / 2 + keyboardGapX;
+                else
+                    currentKeyPos.x += currentKeySize.x / 2;
 
                 // place the key
-                GameObject currentKey = Instantiate(keyModelsDictionary[currentKeyType], currentKeyPos, Quaternion.Euler(0, 0,0));
+                GameObject currentKey = Instantiate(keyModelsDictionary[currentKeyType], currentKeyPos, Quaternion.Euler(0, 0,0), keyBoard.transform);
                 
                 if (row != keyCountEachRow.Count - 1)
                     SetKeyMaterial(currentKey);
-
-                // bind physical key
-                currentKey.GetComponent<Key>().keyName = activeKeys.activeKeysInSequence[placedKeysNum];
-                placedKeysNum++;
                 
+                // set basic key attributes
+                Key keyAttribute = currentKey.GetComponent<Key>();
+                keyAttribute.keyName = activeKeys.activeKeysInSequence[placedKeysNum];
+                keyAttribute.travelDistance = keyTravelDistance;
+                keyAttribute.initDelay = 0.2f * (col + 1);
+
+                placedKeysNum++;
+
                 keysOnKeyboard.Add(currentKey);
 
                 // move to the next key and save the current key size as the previous one
