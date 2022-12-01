@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.57481617, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -613,9 +613,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyName: 0
-  pressForceMagnitude: 20
-  bounceForceMagnitude: 500
-  mass: 0
+  initDelay: 0
+  travelDistance: 0
+  pressDownTime: 0.2
+  bounceUpTime: 0.1
+  isChargeable: 0
+  chargedColor: {r: 0, g: 0, b: 0, a: 0}
+  maxChargeTime: 0
+  maxProtrudeDistance: 0
+  chargeTime: 0
+  protrudeDistance: 0
+  chargeFeedback: {fileID: 0}
 --- !u!64 &362149004
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1183,9 +1191,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyName: 0
-  pressForceMagnitude: 20
-  bounceForceMagnitude: 500
-  mass: 0
+  initDelay: 0
+  travelDistance: 0
+  pressDownTime: 0.2
+  bounceUpTime: 0.1
+  isChargeable: 0
+  chargedColor: {r: 0, g: 0, b: 0, a: 0}
+  maxChargeTime: 0
+  maxProtrudeDistance: 0
+  chargeTime: 0
+  protrudeDistance: 0
+  chargeFeedback: {fileID: 0}
 --- !u!1 &672778516
 GameObject:
   m_ObjectHideFlags: 0
@@ -1797,9 +1813,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyName: 0
-  pressForceMagnitude: 20
-  bounceForceMagnitude: 500
-  mass: 0
+  initDelay: 0
+  travelDistance: 0
+  pressDownTime: 0.2
+  bounceUpTime: 0.1
+  isChargeable: 0
+  chargedColor: {r: 0, g: 0, b: 0, a: 0}
+  maxChargeTime: 0
+  maxProtrudeDistance: 0
+  chargeTime: 0
+  protrudeDistance: 0
+  chargeFeedback: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -3655,7 +3679,6 @@ MonoBehaviour:
       Data: 
   keyBoard: {fileID: 1174715481647734440, guid: 64817022b73054f80bc275b0b90693c3, type: 3}
   keyboardPos: {x: 0, y: 0, z: 0}
-  keyboardCeiling: {fileID: 5582707377657358761, guid: e1e6474ca932e465cb482d311192105c, type: 3}
   activeKeys: {fileID: 11400000, guid: 022178e7812e541dfae11b0bd5229cda, type: 2}
   keyCountEachRow: 0e0000000e0000000d0000000c00000001000000
   startingKeyPos: {x: 0, y: 0, z: 0}
@@ -3664,6 +3687,12 @@ MonoBehaviour:
   keyTravelDistance: 0.5
   leftKeysMat: {fileID: 2100000, guid: 6ef9c895f7bf74dfaacfb374532476db, type: 2}
   rightKeysMat: {fileID: 2100000, guid: 017295119a0c0482496dc7ea028992bb, type: 2}
+  pressDownTime: 0.2
+  bounceUpTime: 0.1
+  maxProtrudeDistance: 0.5
+  isChargeable: 0
+  maxChargeTime: 2
+  chargedColor: {r: 1, g: 0, b: 0, a: 0}
 --- !u!64 &2055515236
 MeshCollider:
   m_ObjectHideFlags: 0
