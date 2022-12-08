@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using MoreMountains.Feedbacks;
 using Unity.VisualScripting;
 using UnityEngine;
 using TMPro;
@@ -9,6 +10,7 @@ public class SoccerScore : MonoBehaviour
 {
     private float SScore = 0;
     public TextMeshProUGUI ScoreText;
+    [SerializeField] private MMF_Player goalFeedback;
     [SerializeField] private GameObject soccer;
     // Start is called before the first frame update
     void Start()
@@ -27,6 +29,7 @@ public class SoccerScore : MonoBehaviour
         if (other.CompareTag("Ball"))
         {
             SScore += 1f;
+            goalFeedback.PlayFeedbacks();
             StartCoroutine(KickOff());
             soccer.tag = "Untagged";
         }

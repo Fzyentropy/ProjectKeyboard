@@ -85,7 +85,7 @@ public class Key : MonoBehaviour
         print(originalY);
         transform.DOMoveY(originalY, 1f);
     }
-    
+
     private void PressKey()
     {
         if (keyName == KeyCode.Space)
@@ -96,7 +96,7 @@ public class Key : MonoBehaviour
                 Input.GetKey(KeyCode.RightMeta) || Input.GetKey(KeyCode.Space))
             {
                 print(keyName);
-                
+
                 if (isChargeable) StartCharge();
 
                 keyRb.DOMoveY(destinationY, pressDownTime);
@@ -107,14 +107,14 @@ public class Key : MonoBehaviour
             if (Input.GetKey(keyName))
             {
                 print(keyName);
-                
+
                 if (isChargeable) StartCharge();
-                        
+
                 keyRb.DOMoveY(destinationY, pressDownTime);
             }
         }
     }
-    
+
     /// <summary>
     /// Add a down force to key when it is pressed
     /// </summary>

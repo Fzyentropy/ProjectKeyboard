@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 
 public class RingsScoreB : MonoBehaviour
 {
     [HideInInspector] public bool hitB = false;
+    [SerializeField] private MMF_Player bFeedback;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,7 @@ public class RingsScoreB : MonoBehaviour
         if (other.CompareTag("Ball"))
         {
             hitB = true;
+            bFeedback.PlayFeedbacks();
         }
     }
 }

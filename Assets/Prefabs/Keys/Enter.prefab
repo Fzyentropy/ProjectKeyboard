@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -5891011755790030416}
   m_Layer: 8
   m_Name: Enter
-  m_TagString: Untagged
+  m_TagString: Key
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117,9 +117,11 @@ MonoBehaviour:
   pressDownTime: 0.2
   bounceUpTime: 0.1
   isChargeable: 1
+  chargedColor: {r: 1, g: 0.01021558, b: 0, a: 0}
   maxChargeTime: 2
   maxProtrudeDistance: 1
-  chargedColor: {r: 1, g: 0.01021558, b: 0, a: 0}
+  chargeTime: 0
+  protrudeDistance: 0
   chargeFeedback: {fileID: 0}
 --- !u!82 &-5891011755790030416
 AudioSource:

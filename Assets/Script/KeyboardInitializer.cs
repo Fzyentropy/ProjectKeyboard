@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection.Emit;
-using OpenCover.Framework.Model;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;

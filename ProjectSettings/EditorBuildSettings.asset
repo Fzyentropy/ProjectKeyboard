@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/AmericanFootball.unity
+    guid: 53ee6b988e4a3654ab71c5921a8d0107
   m_configObjects: {}
