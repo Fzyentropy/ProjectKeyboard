@@ -1,46 +1,35 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Reflection.Emit;
-using OpenCover.Framework.Model;
 using Sirenix.OdinInspector;
 using UnityEngine;
-using UnityEngine.UI;
-using DG.Tweening;
-using Unity.VisualScripting;
-
-/// <summary>
-/// TO DO:
-/// 1. fix the key starting point
-/// 2. keyboard generating position
-/// 3. Material change adapt to the key starting position
-/// 4. collider completely in trigger 
-/// </summary>
+using UnityEngine.Events;
 
 public class KeyboardInitializer : SerializedMonoBehaviour
 {
     [Header("Keyboard Settings")]
-    [SerializeField] private GameObject keyBoard;
+    // all keys on keyboard
+    // public static List<GameObject> keysOnKeyboard = new List<GameObject>();
+    // [SerializeField] private GameObject keyBoard;
     [SerializeField] private Vector3 keyboardPos;
-
+    public int keyboardIndex = -1;
     // keys in use
     [SerializeField] private ActiveKeys activeKeys;
-    
-    // all keys on keyboard
-    public static List<GameObject> keysOnKeyboard = new List<GameObject>();
-    
-    [InfoBox("The number of keys in each row")]
     [SerializeField] private List<int> keyCountEachRow = new List<int>() { 14, 14, 13, 12, 1 };
 
     // position of the first generated key
     [SerializeField] private Vector3 startingKeyPos;
-
     // gap between keys
     [SerializeField] private float keyboardGapX = 0;
     [SerializeField] private float keyboardGapZ = 0;
 
-    [Header("Key Settings")] [Range(0f, 2f)]
-    [SerializeField] private float keyTravelDistance;
+    public bool allowMultipleInput = true;
+    [HideInInspector] public bool isAnyKeyPressed = false;
+
+    [Range(1, 25)]
+    public float keyScale = 1;
+
+    [Header("Key Settings")]
+    [Range(0f, 2f)]
+    public float keyTravelDistance;
     private float keyAltitude;
     [SerializeField] private Material leftKeysMat;
     [SerializeField] private Material rightKeysMat;
@@ -67,10 +56,14 @@ public class KeyboardInitializer : SerializedMonoBehaviour
     // row, column of special keys
     [DictionaryDrawerSettings(KeyLabel = "Key Row and Column", ValueLabel = "Key Type")]
     public Dictionary<Vector2, KeyTypes> specialKeys = new Dictionary<Vector2, KeyTypes>();
+
+    // functional keys
+    [DictionaryDrawerSettings(KeyLabel = "Key Row and Column", ValueLabel = "Functions")]
+    public Dictionary<Vector2, UnityEvent> functionalKeys = new Dictionary<Vector2, UnityEvent>();
+    [HideInInspector] public Dictionary<Vector2, GameObject> functionalKeysCoordinations = new Dictionary<Vector2, GameObject>();
     
     private Dictionary<KeyTypes, Vector3> keySize = new Dictionary<KeyTypes, Vector3>();
-    
-    
+
     public enum KeyTypes
     {
         Letters,
@@ -80,19 +73,22 @@ public class KeyboardInitializer : SerializedMonoBehaviour
         BackSpace,
         Enter,
         RightShift,
-        Space
+        Space,
+        Soccer,
+        AmericanFootball,
+        Sailing,
+        SumoWrestling,
+        GymnasticRings
     }
 
     void Awake()
     {
-        // typeof(KeyCode.A)
         InitializeKeyboard();
     }
 
     private void InitializeKeyboard()
     {
         SetKeys();
-        
         PlaceKeyOnKeyboard();
     }
     
@@ -103,22 +99,19 @@ public class KeyboardInitializer : SerializedMonoBehaviour
     /// </summary>
     private void SetKeys()
     {
-        // set keyboard
-        // if (!keyBoard.Equals(null))
-        Instantiate(keyBoard, keyboardPos, Quaternion.Euler(0, 0, 0));
-        
+        transform.position = keyboardPos;
+
+        keyTravelDistance *= keyScale;
+        keyboardGapX *= keyScale;
+        keyboardGapZ *= keyScale;
+
         // get the real size of each key types
         foreach (var typeModelPair in keyModelsDictionary)
         {
-            keySize.Add(typeModelPair.Key, typeModelPair.Value.GetComponent<MeshRenderer>().bounds.size);
+            keySize.Add(typeModelPair.Key, typeModelPair.Value.GetComponent<MeshRenderer>().bounds.size * keyScale);
         }
-        
-        // get key height
-        // float keyHeight = keySize[KeyTypes.Letters].y;
-        // calculate and move the key altitude: the distance to the ground (y=0)
-        // keyAltitude = keyboardPos.y + keyTravelDistance + keyHeight/2;
     }
-    
+
     /// <summary>
     /// Place keys on keyboard
     /// </summary>
@@ -132,6 +125,9 @@ public class KeyboardInitializer : SerializedMonoBehaviour
         Vector3 currentKeySize = Vector3.zero;
         Vector3 previousKeySize = Vector3.zero;
         int placedKeysNum = 0;
+
+        // place escape key
+        SetUpEscapeKey();
         
         // place keys on keyboard
         for (int row = 0; row < keyCountEachRow.Count; row++)
@@ -158,17 +154,23 @@ public class KeyboardInitializer : SerializedMonoBehaviour
                     currentKeyPos.x += currentKeySize.x / 2;
 
                 // place the key
-                GameObject currentKey = Instantiate(keyModelsDictionary[currentKeyType], currentKeyPos, Quaternion.Euler(0, 0,0), keyBoard.transform);
-                
+                GameObject currentKey = Instantiate(keyModelsDictionary[currentKeyType], currentKeyPos, Quaternion.identity, transform);
+
+                // adjust the key scale
+                currentKey.transform.localScale *= keyScale;
+
                 if (row != keyCountEachRow.Count - 1)
                     SetKeyMaterial(currentKey);
-                
+
+                // set functions on keys
+                SetFunction(currentKey, currentKeyLoc);
+
                 // set basic key attributes
-                SetKeyBasicAttribute(currentKey, placedKeysNum, col);
+                SetKeyBasicAttribute(currentKey, row, placedKeysNum);
                 
                 placedKeysNum++;
 
-                keysOnKeyboard.Add(currentKey);
+                // keysOnKeyboard.Add(currentKey);
 
                 // move to the next key and save the current key size as the previous one
                 previousKeySize = currentKeySize;
@@ -180,12 +182,43 @@ public class KeyboardInitializer : SerializedMonoBehaviour
         }
     }
 
-    private void SetKeyBasicAttribute(GameObject currentKey, int placedKeysNum, int col)
+    private void SetUpEscapeKey()
+    {
+        Vector2 escapeKeyLoc = new Vector2(-1, 0);
+        Vector3 escapeKeyPos = new Vector3(startingKeyPos.x + 0.5f * keyScale, 0f, startingKeyPos.z + keyScale + keyboardGapZ);
+        GameObject escapeKey = Instantiate(keyModelsDictionary[KeyTypes.Letters], escapeKeyPos, Quaternion.identity, transform);
+        escapeKey.transform.localScale *= keyScale;
+        SetFunction(escapeKey, escapeKeyLoc);
+
+        Key keyAttribute = escapeKey.GetComponent<Key>();
+        keyAttribute.keyName = KeyCode.Escape;
+        keyAttribute.keyboardIndex = keyboardIndex;
+        keyAttribute._keyboardInitializer = this;
+
+        keyAttribute.travelDistance = keyTravelDistance;
+        keyAttribute.initDelay = 0;
+
+        keyAttribute.pressDownTime = pressDownTime;
+        keyAttribute.bounceUpTime = bounceUpTime;
+
+        keyAttribute.isChargeable = isChargeable;
+
+        keyAttribute.maxChargeTime = maxChargeTime;
+        keyAttribute.maxProtrudeDistance = maxProtrudeDistance;
+        keyAttribute.chargedColor = chargedColor;
+
+    }
+
+    private void SetKeyBasicAttribute(GameObject currentKey, int row, int placedKeysNum)
     {
         Key keyAttribute = currentKey.GetComponent<Key>();
+
         keyAttribute.keyName = activeKeys.activeKeysInSequence[placedKeysNum];
+        keyAttribute.keyboardIndex = keyboardIndex;
+        keyAttribute._keyboardInitializer = this;
+
         keyAttribute.travelDistance = keyTravelDistance;
-        keyAttribute.initDelay = 0.2f * (col + 1);
+        keyAttribute.initDelay = 0.5f * row;
 
         keyAttribute.pressDownTime = pressDownTime;
         keyAttribute.bounceUpTime = bounceUpTime;
@@ -203,8 +236,26 @@ public class KeyboardInitializer : SerializedMonoBehaviour
             currentKey.GetComponent<MeshRenderer>().material = leftKeysMat;
         else currentKey.GetComponent<MeshRenderer>().material = rightKeysMat;
     }
-    
-    
+
+    /// <summary>
+    /// exit, change to another keyboard, zoom in, cn
+    /// </summary>
+    private void SetFunction(GameObject currentKey, Vector2 currentKeyLoc)
+    {
+        if (functionalKeys.ContainsKey(currentKeyLoc))
+        {
+            FunctionalKey functionalKey = currentKey.AddComponent<FunctionalKey>();
+            functionalKey.keyFunction = functionalKeys[currentKeyLoc];
+            print(functionalKeys[currentKeyLoc].GetType());
+            functionalKeysCoordinations.Add(currentKeyLoc, currentKey);
+        }
+        else
+        {
+            currentKey.AddComponent<Key>();
+        }
+    }
+
+
 
     // width = 15 units, Height = 5 units
     // key types: 1 unit, 1.25 units, 1.5 units, 1.75 units, 2 units, 2.25 units, 2.75 units, 6.25 units

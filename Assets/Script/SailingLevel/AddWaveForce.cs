@@ -24,7 +24,7 @@ public class AddWaveForce : MonoBehaviour
 
     private void WaveForce()
     {
-        if (transform.position.y > 1f) ;
+        if (transform.position.y > 1f)
         {
             rigid.AddForce(Vector3.right * waveForce, ForceMode.Impulse);
         }
