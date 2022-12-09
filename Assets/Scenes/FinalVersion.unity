@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.49641317, b: 0.5748174, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657803, g: 0.49641192, b: 0.5748158, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -823,6 +823,67 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 62890703}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &64666665
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 277758571093484319, guid: a0d68f0f5f3084c04a52a721986be7e3, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 277758571093484319, guid: a0d68f0f5f3084c04a52a721986be7e3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.699999
+      objectReference: {fileID: 0}
+    - target: {fileID: 277758571093484319, guid: a0d68f0f5f3084c04a52a721986be7e3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.649495
+      objectReference: {fileID: 0}
+    - target: {fileID: 277758571093484319, guid: a0d68f0f5f3084c04a52a721986be7e3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 17.86661
+      objectReference: {fileID: 0}
+    - target: {fileID: 277758571093484319, guid: a0d68f0f5f3084c04a52a721986be7e3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 277758571093484319, guid: a0d68f0f5f3084c04a52a721986be7e3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000001356905
+      objectReference: {fileID: 0}
+    - target: {fileID: 277758571093484319, guid: a0d68f0f5f3084c04a52a721986be7e3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.0000001490116
+      objectReference: {fileID: 0}
+    - target: {fileID: 277758571093484319, guid: a0d68f0f5f3084c04a52a721986be7e3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 2.2204458e-15
+      objectReference: {fileID: 0}
+    - target: {fileID: 277758571093484319, guid: a0d68f0f5f3084c04a52a721986be7e3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 277758571093484319, guid: a0d68f0f5f3084c04a52a721986be7e3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 277758571093484319, guid: a0d68f0f5f3084c04a52a721986be7e3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 617304716512639397, guid: a0d68f0f5f3084c04a52a721986be7e3, type: 3}
+      propertyPath: m_Name
+      value: football
+      objectReference: {fileID: 0}
+    - target: {fileID: 617304716512639397, guid: a0d68f0f5f3084c04a52a721986be7e3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a0d68f0f5f3084c04a52a721986be7e3, type: 3}
 --- !u!1 &80453597
 GameObject:
   m_ObjectHideFlags: 0
@@ -9492,6 +9553,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 865559983}
+  - component: {fileID: 865559984}
   m_Layer: 6
   m_Name: ScoreManager
   m_TagString: Untagged
@@ -9514,6 +9576,21 @@ Transform:
   m_Father: {fileID: 2035152980}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &865559984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865559982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2fcc89e33a2148f1864fcc31716c335, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftScoreTextField: {fileID: 0}
+  rightScoreTextField: {fileID: 0}
+  Billboards: []
 --- !u!1 &869075228
 GameObject:
   m_ObjectHideFlags: 0
@@ -14040,7 +14117,7 @@ MonoBehaviour:
   rightKeysMat: {fileID: 2100000, guid: 017295119a0c0482496dc7ea028992bb, type: 2}
   pressDownTime: 0.2
   bounceUpTime: 0.1
-  maxProtrudeDistance: 1
+  maxProtrudeDistance: 0
   isChargeable: 1
   maxChargeTime: 0.5
   chargedColor: {r: 0.009242773, g: 1, b: 0, a: 0}
@@ -18625,8 +18702,8 @@ Transform:
   m_GameObject: {fileID: 2035152979}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.32, y: 20, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 339399433}
   - {fileID: 600876023}

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using ExternalPropertyAttributes;
-
+using System.Collections;
 
 public class LevelManager : MonoBehaviour
 {
@@ -95,9 +95,48 @@ public class LevelManager : MonoBehaviour
     /// <param name="levelIndex"></param>
     private void StartLevel(int levelIndex)
     {
-
         // generate the keyboard
         GenerateKeyboard(levelIndex, levelKeyboardPosition[levelIndex]);
+
+        // wait until keyboard rised
+        // Utils.Timer(2.5f);
+        StartCoroutine(Wait(3f));
+        // generate playable object
+        GeneratePlayableObject(levelIndex);
+
+        // start level countdown
+        // StartLevelCountdown(levelIndex);
+    }
+
+    private IEnumerator Wait(float time)
+    {
+        yield return new WaitForSeconds(time);
+    }
+
+    // private void LevelStartCountdown()
+    // {
+        // countdown
+
+        // after finished
+            // generate playable objects
+            // level game countdown start
+    // }
+    private void StartLevelCountdown(int levelIndex)
+    {
+        Billboard currentBillboard = GameManager.Instance.ScoreManager.Billboards[levelIndex];
+        currentBillboard.BeginTimer();
+
+    }
+
+    private void GeneratePlayableObject(int levelIndex)
+    {
+        LevelSetup.LevelStructure currentLevel = levelSetups.LevelTable[levelIndex];
+        GameObject levelKey = functionalTitleKeysCoordinations[currentLevel.LevelKeyCoordination];
+        Vector3 spawnPos = levelKey.transform.position + currentLevel.playableObjectPosition;
+        spawnPos.y += 12.5f;
+
+        GameObject playableObject = Instantiate(currentLevel.playableGameObject,
+            spawnPos, Quaternion.identity);
     }
 
     /// <summary>
@@ -154,5 +193,18 @@ public class LevelManager : MonoBehaviour
         levelKeyboardPosition += centerOffset;
 
         return levelKeyboardPosition;
+    }
+
+    private void EndLevel()
+    {
+        // get winner
+
+        // wait for secs
+
+        // back to main scene
+
+        // destroy level keyboard
+
+        // delete level from list
     }
 }

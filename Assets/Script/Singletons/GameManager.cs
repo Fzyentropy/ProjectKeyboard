@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     public LevelManager LevelManager { get; private set; }
     public CameraManager CameraManager { get; private set; }
     public ControlManager ControlManager { get; private set; }
+    public ScoreManager ScoreManager { get; private set; }
+    // public Utils Utils { get; private set; }
 
     [LabelText("Actions")]
     public Action<int> OnLevelStarts;
@@ -32,6 +34,8 @@ public class GameManager : MonoBehaviour
         LevelManager = GetComponentInChildren<LevelManager>();
         CameraManager = GetComponentInChildren<CameraManager>();
         ControlManager = GetComponentInChildren<ControlManager>();
+        ScoreManager = GetComponentInChildren<ScoreManager>();
+        // Utils = GetComponentInChildren<Utils>();
     }
 
     private void Update()

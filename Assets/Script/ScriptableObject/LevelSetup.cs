@@ -8,10 +8,7 @@ using Sirenix.OdinInspector;
 public class LevelSetup : ScriptableObject
 {
     [TableList(ShowPaging = true, ShowIndexLabels = true)]
-    public List<LevelStructure> LevelTable = new List<LevelStructure>()
-    {
-
-    };
+    public List<LevelStructure> LevelTable = new List<LevelStructure>();
 
     [Serializable]
     public class LevelStructure
@@ -19,5 +16,7 @@ public class LevelSetup : ScriptableObject
         [BoxGroup("Levels", ShowLabel = false)]
         public Vector2 LevelKeyCoordination;
         public GameObject LevelKeyboard;
+        public GameObject playableGameObject;
+        public Vector3 playableObjectPosition;
     }
 }

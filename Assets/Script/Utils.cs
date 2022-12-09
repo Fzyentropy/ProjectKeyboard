@@ -5,30 +5,42 @@ using UnityEngine;
 using TMPro;    
 using UnityEngine.SceneManagement;
 
-public class Utils : MonoBehaviour
+public static class Utils
 {
-    public TextMeshProUGUI timerText;
-    public float timeLimit = 30;
-    private float timeLeft;
-    // Start is called before the first frame update
-    void Start()
+    public static IEnumerator Timer(float timeLimit)
     {
-        timeLeft = timeLimit;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        Timer();
-    }
-
-    public void Timer()
-    {
-        timeLeft -= Time.deltaTime;
-        timerText.text = "Time left: " + Mathf.FloorToInt(timeLeft);
-        if (timeLeft <= 0f)
+        float counter = timeLimit;
+        while (counter > 0)
         {
-            timerText.text = "Time's Up!";
+            yield return new WaitForSeconds(Time.deltaTime);
+            counter -= Time.deltaTime;
+        }
+    }
+
+    public static IEnumerator Timer(float timeLimit, string text)
+    {
+        float counter = timeLimit;
+        while (counter > 0)
+        {
+            text = Mathf.RoundToInt(counter).ToString();
+            yield return new WaitForSeconds(Time.deltaTime);
+            counter -= Time.deltaTime;
+        }
+    }
+
+    public static void ChangeEnvironmentalText(TextMeshProUGUI textField, string text, bool isAddingText)
+    {
+        if (isAddingText)
+        {
+            textField.text += text;
+            if (textField.text.Length >= 8)
+            {
+                textField.text = text;
+            }
+        }
+        else
+        {
+            textField.text = text;
         }
     }
 }

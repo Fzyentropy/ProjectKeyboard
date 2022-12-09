@@ -25,7 +25,7 @@ public class KeyboardInitializer : SerializedMonoBehaviour
     [HideInInspector] public bool isAnyKeyPressed = false;
 
     [Range(1, 25)]
-    public float keyScale = 1;
+    public float keyScale = 25;
 
     [Header("Key Settings")]
     [Range(0f, 2f)]
@@ -104,6 +104,7 @@ public class KeyboardInitializer : SerializedMonoBehaviour
         keyTravelDistance *= keyScale;
         keyboardGapX *= keyScale;
         keyboardGapZ *= keyScale;
+        maxProtrudeDistance *= keyScale;
 
         // get the real size of each key types
         foreach (var typeModelPair in keyModelsDictionary)
@@ -246,7 +247,7 @@ public class KeyboardInitializer : SerializedMonoBehaviour
         {
             FunctionalKey functionalKey = currentKey.AddComponent<FunctionalKey>();
             functionalKey.keyFunction = functionalKeys[currentKeyLoc];
-            print(functionalKeys[currentKeyLoc].GetType());
+            // print(functionalKeys[currentKeyLoc].GetType());
             functionalKeysCoordinations.Add(currentKeyLoc, currentKey);
         }
         else
