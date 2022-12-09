@@ -21,6 +21,7 @@ public class LevelManager : MonoBehaviour
     private List<Vector3> levelKeyboardPosition = new List<Vector3>();
 
     private GameObject activeKeyboard = null;
+    private GameObject activePlayableObject = null;
 
     void Start()
     {
@@ -137,6 +138,7 @@ public class LevelManager : MonoBehaviour
 
         GameObject playableObject = Instantiate(currentLevel.playableGameObject,
             spawnPos, Quaternion.identity);
+        activePlayableObject = playableObject;
     }
 
     /// <summary>
@@ -176,6 +178,8 @@ public class LevelManager : MonoBehaviour
     {
         // activeKeyboard.SetActive(false);
         Destroy(activeKeyboard);
+        Destroy(activePlayableObject);
+        activePlayableObject = null;
         activeKeyboard = null;
         // activeKeyboard.transform.DOMoveY(activeKeyboard.transform.position.y - 10, 1f)
         //     .OnComplete(() => { activeKeyboard.SetActive(false); activeKeyboard = null; });
