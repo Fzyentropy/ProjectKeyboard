@@ -1,0 +1,9 @@
+Even fog URP is an always flat simple fog for the Universal Render Pipeline.
+
+Basic use:
+1. Create a Plane - GameObject -> 3D Object -> Plane
+2. Create a new material, drag the appropriate Vertical Fog.shader on top of the material and then apply the material to the plane/object
+3. DEPTH CONTROL: Change the scale of the Y axis of the plane object to adjust the depth
+
+If the fog breaks in your URP version, the source of the shader is included in Source folder and can be recreated within Shader Graph if necessary!
+Or try using the new Standard RP EvenFog shader. 

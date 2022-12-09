@@ -908,7 +908,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 122928462}
   m_LocalRotation: {x: -0, y: 0.70710695, z: -0, w: -0.70710665}
-  m_LocalPosition: {x: 8.04, y: 8.739, z: -0.79}
+  m_LocalPosition: {x: 0.52999926, y: -6.3099995, z: 1.3700004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -922,8 +922,8 @@ Transform:
   - {fileID: 126490751}
   - {fileID: 176713666}
   - {fileID: 1376884797}
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 1356470977}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
 --- !u!1 &126490745
 GameObject:
@@ -2261,8 +2261,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05a9b290a51114f5193042494aefca41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyboardIndex: 0
   keyName: 0
   initDelay: 0
+  _keyboardInitializer: {fileID: 0}
   travelDistance: 0
   pressDownTime: 0.2
   bounceUpTime: 0.1
@@ -2272,7 +2274,6 @@ MonoBehaviour:
   maxProtrudeDistance: 0
   chargeTime: 0
   protrudeDistance: 0
-  chargeFeedback: {fileID: 0}
 --- !u!1 &371940992
 GameObject:
   m_ObjectHideFlags: 0
@@ -4268,8 +4269,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05a9b290a51114f5193042494aefca41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyboardIndex: 0
   keyName: 0
   initDelay: 0
+  _keyboardInitializer: {fileID: 0}
   travelDistance: 0
   pressDownTime: 0.2
   bounceUpTime: 0.1
@@ -4279,7 +4282,6 @@ MonoBehaviour:
   maxProtrudeDistance: 0
   chargeTime: 0
   protrudeDistance: 0
-  chargeFeedback: {fileID: 0}
 --- !u!1 &667609546
 GameObject:
   m_ObjectHideFlags: 0
@@ -5546,8 +5548,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05a9b290a51114f5193042494aefca41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyboardIndex: 0
   keyName: 0
   initDelay: 0
+  _keyboardInitializer: {fileID: 0}
   travelDistance: 0
   pressDownTime: 0.2
   bounceUpTime: 0.1
@@ -5557,7 +5561,6 @@ MonoBehaviour:
   maxProtrudeDistance: 0
   chargeTime: 0
   protrudeDistance: 0
-  chargeFeedback: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -6561,7 +6564,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1112279373}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.70710677}
-  m_LocalPosition: {x: 9.523534, y: 8.739, z: -0.86046803}
+  m_LocalPosition: {x: 2.013533, y: -6.3099995, z: 1.2995323}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6575,8 +6578,8 @@ Transform:
   - {fileID: 250681176}
   - {fileID: 531727960}
   - {fileID: 1429833659}
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 1356470977}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1126684666
 GameObject:
@@ -6778,15 +6781,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1136436404}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.76, y: 0.44, z: -2.01}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.24999952, y: -14.609, z: 0.15000033}
   m_LocalScale: {x: 15.7483835, y: 1, z: 4.8102984}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2127565044}
   - {fileID: 1576243480}
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 1356470977}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1172193510
 GameObject:
@@ -7343,6 +7346,41 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 2.220446e-16, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1356470976
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1356470977}
+  m_Layer: 0
+  m_Name: SumoFunction
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1356470977
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356470976}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.5100007, y: 15.049, z: -2.1600003}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1646499699}
+  - {fileID: 1136436408}
+  - {fileID: 1112279374}
+  - {fileID: 122928463}
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1376884796
 GameObject:
   m_ObjectHideFlags: 0
@@ -8073,7 +8111,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1646499698}
   m_LocalRotation: {x: -0.000000017122154, y: 0.000000029802322, z: -0.000000017122161, w: 1}
-  m_LocalPosition: {x: 7.5100007, y: 15.049, z: -2.1600003}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 15.748384, y: 1, z: 4.810298}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8092,8 +8130,8 @@ Transform:
   - {fileID: 1807629693}
   - {fileID: 2112822140}
   - {fileID: 97713294}
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_Father: {fileID: 1356470977}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1692165326
 GameObject:
@@ -9102,13 +9140,52 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  keyBoard: {fileID: 1174715481647734440, guid: 64817022b73054f80bc275b0b90693c3, type: 3}
+    - Name: functionalKeys
+      Entry: 7
+      Data: 4|System.Collections.Generic.Dictionary`2[[UnityEngine.Vector2, UnityEngine.CoreModule],[UnityEngine.Events.UnityEvent,
+        UnityEngine.CoreModule]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 5|System.Collections.Generic.GenericEqualityComparer`1[[UnityEngine.Vector2,
+        UnityEngine.CoreModule]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: functionalKeysCoordinations
+      Entry: 7
+      Data: 6|System.Collections.Generic.Dictionary`2[[UnityEngine.Vector2, UnityEngine.CoreModule],[UnityEngine.GameObject,
+        UnityEngine.CoreModule]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 5
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   keyboardPos: {x: 0, y: 0, z: 0}
+  keyboardIndex: -1
   activeKeys: {fileID: 11400000, guid: 022178e7812e541dfae11b0bd5229cda, type: 2}
   keyCountEachRow: 0e0000000e0000000d0000000c00000001000000
   startingKeyPos: {x: 0, y: 0, z: 0}
   keyboardGapX: 0.05
   keyboardGapZ: 0.05
+  allowMultipleInput: 1
+  isAnyKeyPressed: 0
+  keyScale: 1
   keyTravelDistance: 0.5
   leftKeysMat: {fileID: 2100000, guid: 6ef9c895f7bf74dfaacfb374532476db, type: 2}
   rightKeysMat: {fileID: 2100000, guid: 017295119a0c0482496dc7ea028992bb, type: 2}

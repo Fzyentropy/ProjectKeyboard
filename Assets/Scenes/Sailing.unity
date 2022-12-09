@@ -327,7 +327,7 @@ Transform:
   - {fileID: 1902285780}
   - {fileID: 1639110576}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &62528487
 GameObject:
@@ -947,8 +947,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05a9b290a51114f5193042494aefca41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyboardIndex: 0
   keyName: 0
   initDelay: 0
+  _keyboardInitializer: {fileID: 0}
   travelDistance: 0
   pressDownTime: 0.2
   bounceUpTime: 0.1
@@ -958,7 +960,6 @@ MonoBehaviour:
   maxProtrudeDistance: 0
   chargeTime: 0
   protrudeDistance: 0
-  chargeFeedback: {fileID: 0}
 --- !u!1001 &308698466
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1133,7 +1134,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &439283505
 GameObject:
@@ -1272,7 +1273,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 439283505}
   m_LocalRotation: {x: 0.07737239, y: 0.7835832, z: 0.08850976, w: 0.610063}
-  m_LocalPosition: {x: 1.77, y: 3.728, z: -0.35}
+  m_LocalPosition: {x: -5.9900002, y: 3.2879999, z: 1.66}
   m_LocalScale: {x: -0.008, y: 0.0079999985, z: 0.0079999985}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -1286,8 +1287,8 @@ Transform:
   - {fileID: 2148758}
   - {fileID: 1407148506}
   - {fileID: 1821726959}
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 854026310}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -2.539, y: 103.899, z: 13.266}
 --- !u!114 &439283513
 MonoBehaviour:
@@ -1424,7 +1425,7 @@ RectTransform:
   m_Children:
   - {fileID: 1261087015}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1639,8 +1640,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05a9b290a51114f5193042494aefca41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyboardIndex: 0
   keyName: 0
   initDelay: 0
+  _keyboardInitializer: {fileID: 0}
   travelDistance: 0
   pressDownTime: 0.2
   bounceUpTime: 0.1
@@ -1650,7 +1653,6 @@ MonoBehaviour:
   maxProtrudeDistance: 0
   chargeTime: 0
   protrudeDistance: 0
-  chargeFeedback: {fileID: 0}
 --- !u!1 &672778516
 GameObject:
   m_ObjectHideFlags: 0
@@ -1886,7 +1888,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!114 &705507996
 MonoBehaviour:
@@ -2039,6 +2041,41 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10.000002, y: 1.7985613e-14, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &854026309
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 854026310}
+  m_Layer: 0
+  m_Name: SailingFunction
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &854026310
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854026309}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.76, y: 0.44, z: -2.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2092867875}
+  - {fileID: 661722723959228941}
+  - {fileID: 439283512}
+  - {fileID: 1136436408}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &946149291
 GameObject:
   m_ObjectHideFlags: 0
@@ -2261,8 +2298,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05a9b290a51114f5193042494aefca41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyboardIndex: 0
   keyName: 0
   initDelay: 0
+  _keyboardInitializer: {fileID: 0}
   travelDistance: 0
   pressDownTime: 0.2
   bounceUpTime: 0.1
@@ -2272,7 +2311,6 @@ MonoBehaviour:
   maxProtrudeDistance: 0
   chargeTime: 0
   protrudeDistance: 0
-  chargeFeedback: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -2356,7 +2394,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
@@ -2647,15 +2685,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1136436404}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.76, y: 0.44, z: -2.01}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 15.7483835, y: 1, z: 4.8102984}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2127565044}
   - {fileID: 1576243480}
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 854026310}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1208189071
 GameObject:
@@ -4469,13 +4507,52 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  keyBoard: {fileID: 1174715481647734440, guid: 64817022b73054f80bc275b0b90693c3, type: 3}
+    - Name: functionalKeys
+      Entry: 7
+      Data: 4|System.Collections.Generic.Dictionary`2[[UnityEngine.Vector2, UnityEngine.CoreModule],[UnityEngine.Events.UnityEvent,
+        UnityEngine.CoreModule]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 5|System.Collections.Generic.GenericEqualityComparer`1[[UnityEngine.Vector2,
+        UnityEngine.CoreModule]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: functionalKeysCoordinations
+      Entry: 7
+      Data: 6|System.Collections.Generic.Dictionary`2[[UnityEngine.Vector2, UnityEngine.CoreModule],[UnityEngine.GameObject,
+        UnityEngine.CoreModule]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 5
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   keyboardPos: {x: 0, y: 0, z: 0}
+  keyboardIndex: -1
   activeKeys: {fileID: 11400000, guid: 022178e7812e541dfae11b0bd5229cda, type: 2}
   keyCountEachRow: 0e0000000e0000000d0000000c00000001000000
   startingKeyPos: {x: 0, y: 0, z: 0}
   keyboardGapX: 0.05
   keyboardGapZ: 0.05
+  allowMultipleInput: 1
+  isAnyKeyPressed: 0
+  keyScale: 1
   keyTravelDistance: 0.5
   leftKeysMat: {fileID: 2100000, guid: 6ef9c895f7bf74dfaacfb374532476db, type: 2}
   rightKeysMat: {fileID: 2100000, guid: 017295119a0c0482496dc7ea028992bb, type: 2}
@@ -4611,7 +4688,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &2055515236
 MeshCollider:
@@ -4650,8 +4727,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2092867874}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.84, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -7.76, y: -3.28, z: 2.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4660,8 +4737,8 @@ Transform:
   - {fileID: 1457165841}
   - {fileID: 40878361}
   - {fileID: 1862084921}
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_Father: {fileID: 854026310}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2127565043
 GameObject:
@@ -4819,7 +4896,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1143238392953233936}
   m_LocalRotation: {x: 0.07737239, y: 0.7835832, z: 0.08850976, w: 0.610063}
-  m_LocalPosition: {x: 1.802, y: 3.735, z: -2.311}
+  m_LocalPosition: {x: -5.958, y: 3.2949998, z: -0.30100012}
   m_LocalScale: {x: -0.008, y: 0.0079999985, z: 0.0079999985}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -4833,8 +4910,8 @@ Transform:
   - {fileID: 4314614459294311263}
   - {fileID: 7867933034413863158}
   - {fileID: 259566320}
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 854026310}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -2.539, y: 103.899, z: 13.266}
 --- !u!33 &878466222702920047
 MeshFilter:

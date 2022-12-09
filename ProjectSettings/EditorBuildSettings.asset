@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/AmericanFootball.unity
-    guid: 53ee6b988e4a3654ab71c5921a8d0107
+    path: Assets/Scenes/FinalVersion.unity
+    guid: 2dc1958e0988f4d5396d526424233e91
   m_configObjects: {}

@@ -1,0 +1,2 @@
+This folder contains old files which have been superseded by upgraded versions.
+You should use the new versions outside of this folder but I'll still leave the old files here just in case.
