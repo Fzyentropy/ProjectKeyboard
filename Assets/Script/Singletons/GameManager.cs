@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
 
     [LabelText("Actions")]
     public Action<int> OnLevelStarts;
-    public Action OnLevelEnds;
+    public Action<int> OnLevelEnds;
     public Action OnBackToMenu;
 
     private void Awake()

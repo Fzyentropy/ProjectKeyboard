@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 7509605480589374494}
   - component: {fileID: 4150641141500128089}
   - component: {fileID: 7872901380345169622}
-  - component: {fileID: 5930735837018157944}
+  - component: {fileID: -8440629639745694820}
   m_Layer: 0
-  m_Name: Sumo_Billboard
+  m_Name: Sailing_Billboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -103,7 +103,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &5930735837018157944
+--- !u!114 &-8440629639745694820
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b82b5682d85294351a7cfa9d089b0cd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BillBoardID: 0
+  BillBoardID: 2
   hasTimeLimit: 0
   timeTextField: {fileID: 0}
   timeLimit: 10

@@ -86,11 +86,7 @@ public class Key : MonoBehaviour
         keyRb.isKinematic = true;
 
         // the start and end point of each key when pressed down
-        // print("travelDistance " + travelDistance);
-        // print("transform.position.y " + transform.position.y);
         originalY = travelDistance + transform.position.y;
-        // print("originalY " + originalY);
-        // print("parent " + transform.parent.position.y);
         destinationY = originalY - travelDistance;
 
         protrudeDistance = maxProtrudeDistance;
@@ -180,7 +176,7 @@ public class Key : MonoBehaviour
         }
     }
 
-    private void KeyMoveUp()
+    protected virtual void KeyMoveUp()
     {
         _keyboardInitializer.isAnyKeyPressed = false;
         isPressed = false;

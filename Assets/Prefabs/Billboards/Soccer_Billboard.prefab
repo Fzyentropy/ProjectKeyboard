@@ -347,7 +347,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Start!
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4eccd51250cfa3948a3ac1e21d15fe34, type: 2}
   m_sharedMaterial: {fileID: 7304186015023537574, guid: 4eccd51250cfa3948a3ac1e21d15fe34, type: 2}
@@ -1260,7 +1260,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 62
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0f830b4b35476a64095c922deaa35b72, type: 2}
   m_sharedMaterial: {fileID: 5618644325099872008, guid: 0f830b4b35476a64095c922deaa35b72, type: 2}
@@ -1432,6 +1432,7 @@ GameObject:
   - component: {fileID: 837178099480777073}
   - component: {fileID: 3930456306664372712}
   - component: {fileID: 5795688516989960546}
+  - component: {fileID: -789395505579403750}
   m_Layer: 0
   m_Name: Soccer_Billboard
   m_TagString: Untagged
@@ -1522,3 +1523,23 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &-789395505579403750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8960588802854180694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b82b5682d85294351a7cfa9d089b0cd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BillBoardID: 4
+  hasTimeLimit: 1
+  timeTextField: {fileID: 6025981582795423226}
+  timeLimit: 10
+  hasScore: 1
+  leftScoreTextField: {fileID: 3582262706483357742}
+  rightScoreTextField: {fileID: 1174929885754914355}
+  dialogueTextField: {fileID: 4579717309135976181}

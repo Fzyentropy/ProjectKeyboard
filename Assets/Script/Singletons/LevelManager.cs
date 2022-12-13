@@ -98,35 +98,12 @@ public class LevelManager : MonoBehaviour
     {
         // generate the keyboard
         GenerateKeyboard(levelIndex, levelKeyboardPosition[levelIndex]);
-
-        // wait until keyboard rised
-        // Utils.Timer(2.5f);
-        StartCoroutine(Wait(3f));
+        // wait until keyboard rising
+        StartCoroutine(Utils.Timer(1.5f));
         // generate playable object
         GeneratePlayableObject(levelIndex);
-
-        // start level countdown
-        // StartLevelCountdown(levelIndex);
-    }
-
-    private IEnumerator Wait(float time)
-    {
-        yield return new WaitForSeconds(time);
-    }
-
-    // private void LevelStartCountdown()
-    // {
-        // countdown
-
-        // after finished
-            // generate playable objects
-            // level game countdown start
-    // }
-    private void StartLevelCountdown(int levelIndex)
-    {
-        Billboard currentBillboard = GameManager.Instance.ScoreManager.Billboards[levelIndex];
-        currentBillboard.BeginTimer();
-
+        // init scoring system
+        // StartLevelScoring(levelIndex);
     }
 
     private void GeneratePlayableObject(int levelIndex)

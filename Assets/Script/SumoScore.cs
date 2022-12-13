@@ -15,12 +15,6 @@ public class SumoScore : MonoBehaviour
         resultText.text = "Push your opponent out of the keyboard!";
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player1")

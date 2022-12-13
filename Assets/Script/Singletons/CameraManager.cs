@@ -18,13 +18,13 @@ public class CameraManager : MonoBehaviour
     void Start()
     {
         GameManager.Instance.OnLevelStarts += SwitchLevelCamera;
-        GameManager.Instance.OnBackToMenu += SwitchLevelCamera;
+        GameManager.Instance.OnBackToMenu += SwitchToMenuCamera;
     }
 
     private void OnDestroy()
     {
         GameManager.Instance.OnLevelStarts -= SwitchLevelCamera;
-        GameManager.Instance.OnBackToMenu -= SwitchLevelCamera;
+        GameManager.Instance.OnBackToMenu -= SwitchToMenuCamera;
     }
 
     /// <summary>
@@ -55,7 +55,7 @@ public class CameraManager : MonoBehaviour
     //     return cam == activeCamera;
     // }
 
-    private void SwitchLevelCamera()
+    private void SwitchToMenuCamera()
     {
         if (cameraBrain.IsBlending) return;
 

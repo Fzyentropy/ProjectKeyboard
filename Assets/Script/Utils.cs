@@ -9,12 +9,9 @@ public static class Utils
 {
     public static IEnumerator Timer(float timeLimit)
     {
-        float counter = timeLimit;
-        while (counter > 0)
-        {
-            yield return new WaitForSeconds(Time.deltaTime);
-            counter -= Time.deltaTime;
-        }
+        if (timeLimit <= 0) yield return null;
+
+        yield return new WaitForSeconds(timeLimit);
     }
 
     public static IEnumerator Timer(float timeLimit, string text)

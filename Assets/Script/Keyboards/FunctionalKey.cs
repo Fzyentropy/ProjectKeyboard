@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class FunctionalKey : Key
 {
     [HideInInspector] public UnityEvent keyFunction;
+    private bool isInvoked = false;
 
     /// <summary>
     /// trigger the function when the key released
@@ -15,10 +16,23 @@ public class FunctionalKey : Key
     {
         base.StartCharge();
 
+        InvokeFunction();
+    }
+
+    protected override void KeyMoveUp()
+    {
+        base.KeyMoveUp();
+        isInvoked = false;
+    }
+
+    private void InvokeFunction()
+    {
+        if (isInvoked) return;
+
         if (isFullyCharged)
         {
             keyFunction.Invoke();
-            isFullyCharged = false;
+            isInvoked = true;
         }
     }
 }
