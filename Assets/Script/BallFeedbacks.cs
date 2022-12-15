@@ -10,22 +10,31 @@ public class BallFeedbacks : MonoBehaviour
     public MMF_Player hitPoleFeedback;
     public MMF_Player landFeedback;
     public MMF_Player kickFeedback;
+    public MMF_Player goalFeedback;
     // Start is called before the first frame update
     void Start()
     {
         ballRb = GetComponent<Rigidbody>();
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnCollisionExit(Collision other)
     {
-        if (other.tag.Equals("Key") & transform.position.y < 3.8f)
+        if (other.collider.CompareTag("Key"))
         {
-            kickFeedback?.PlayFeedbacks();
+            kickFeedback.PlayFeedbacks();
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.tag.Equals("Pole")) hitPoleFeedback?.PlayFeedbacks();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("LeftScoreField") || other.CompareTag("RightScoreField"))
+        {
+            goalFeedback.PlayFeedbacks();
+        }
     }
 }

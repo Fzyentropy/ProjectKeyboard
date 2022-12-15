@@ -2111,7 +2111,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3771701550778555481
 Transform:
   m_ObjectHideFlags: 0
@@ -8844,7 +8844,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b56c12a2d829c047b6da243773d62b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trashTalkDialogBox: {fileID: 9208924178753537517}
 --- !u!1 &8022418308685442881
 GameObject:
   m_ObjectHideFlags: 0

@@ -513,7 +513,7 @@ MonoBehaviour:
   isAnyKeyPressed: 0
   keyScale: 1
   keyTravelDistance: 1
-  leftKeysMat: {fileID: 2100000, guid: 6ef9c895f7bf74dfaacfb374532476db, type: 2}
+  leftKeysMat: {fileID: 2100000, guid: 017295119a0c0482496dc7ea028992bb, type: 2}
   rightKeysMat: {fileID: 2100000, guid: 017295119a0c0482496dc7ea028992bb, type: 2}
   pressDownTime: 0.2
   bounceUpTime: 0.1

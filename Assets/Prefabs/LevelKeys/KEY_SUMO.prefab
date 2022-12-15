@@ -19468,7 +19468,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b56c12a2d829c047b6da243773d62b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trashTalkDialogBox: {fileID: 764271895829960613}
 --- !u!1 &8363478861326173352
 GameObject:
   m_ObjectHideFlags: 0
@@ -19852,7 +19851,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &720681083010328746
 Transform:
   m_ObjectHideFlags: 0
@@ -20500,6 +20499,14 @@ PrefabInstance:
     - target: {fileID: 948464092984271749, guid: 343e577fcc5cd429281e951bf1730479, type: 3}
       propertyPath: m_Name
       value: Sumo_Billboard
+      objectReference: {fileID: 0}
+    - target: {fileID: 4409896215694309043, guid: 343e577fcc5cd429281e951bf1730479, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513955580691276009, guid: 343e577fcc5cd429281e951bf1730479, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5718603907579415024, guid: 343e577fcc5cd429281e951bf1730479, type: 3}
       propertyPath: m_RootOrder
