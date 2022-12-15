@@ -503,7 +503,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   keyboardPos: {x: 0, y: 0, z: 0}
-  keyboardIndex: 1
+  keyboardIndex: 3
   activeKeys: {fileID: 11400000, guid: 022178e7812e541dfae11b0bd5229cda, type: 2}
   keyCountEachRow: 0e0000000e0000000d0000000c00000001000000
   startingKeyPos: {x: 0, y: 0, z: 0}
@@ -517,7 +517,7 @@ MonoBehaviour:
   rightKeysMat: {fileID: 2100000, guid: 017295119a0c0482496dc7ea028992bb, type: 2}
   pressDownTime: 0.2
   bounceUpTime: 0.1
-  maxProtrudeDistance: 1
+  maxProtrudeDistance: 0.3
   isChargeable: 1
   maxChargeTime: 0.5
   chargedColor: {r: 1, g: 0, b: 0, a: 0}

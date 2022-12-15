@@ -24,19 +24,19 @@ public class RingsScore : MonoBehaviour
     {
         collisionBoxA.transform.position = new Vector3(
             (leftRing.transform.position.x + rightRing.transform.position.x) / 2,
-            leftRing.transform.position.y - 1/25f, leftRing.transform.position.z + 3/50f);
+            leftRing.transform.position.y - 1f, leftRing.transform.position.z + 1.5f);
         
         collisionBoxB.transform.position = new Vector3(
             (leftRing.transform.position.x + rightRing.transform.position.x) / 2,
-            leftRing.transform.position.y - 1/25f, leftRing.transform.position.z - 3/50f);
+            leftRing.transform.position.y - 1f, leftRing.transform.position.z - 1.5f);
 
         collisionBoxC.transform.position =
             new Vector3((leftRing.transform.position.x + rightRing.transform.position.x) / 2,
-                leftRing.transform.position.y + 1/25f, leftRing.transform.position.z);
+                leftRing.transform.position.y + 1f, leftRing.transform.position.z);
         
         transform.position = new Vector3(
             (leftRing.transform.position.x + rightRing.transform.position.x) / 2,
-            leftRing.transform.position.y - 4/25f, leftRing.transform.position.z);
+            leftRing.transform.position.y - 4f, leftRing.transform.position.z);
 
         // ringsScoreText.text = ringsScore.ToString();
     }

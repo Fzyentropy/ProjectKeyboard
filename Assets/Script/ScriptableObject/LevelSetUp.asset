@@ -24,11 +24,11 @@ MonoBehaviour:
   - LevelKeyCoordination: {x: 2, y: 2}
     LevelKeyboard: {fileID: 4381511471181973476, guid: 0f25ccd126f3e1441b6edb4d207e47d8, type: 3}
     playableGameObject: {fileID: 8019223813032314190, guid: 1a04078a6923f493191f378ba3c8bb50, type: 3}
-    playableObjectPosition: {x: 0, y: 30, z: 0}
+    playableObjectPosition: {x: 4, y: 25, z: -0.15}
   - LevelKeyCoordination: {x: 1, y: 9}
     LevelKeyboard: {fileID: 4381511471181973476, guid: f1f509d17315ed04a8b4f7dec6093cf1, type: 3}
     playableGameObject: {fileID: 8341512986175398331, guid: 2bd87a733533047d38a47cebe2409d56, type: 3}
-    playableObjectPosition: {x: 15, y: 0, z: 11}
+    playableObjectPosition: {x: 15, y: 0.5, z: 11}
   - LevelKeyCoordination: {x: 3, y: 7}
     LevelKeyboard: {fileID: 4381511471181973476, guid: 16251ec8be867f742a989abb1792ef3e, type: 3}
     playableGameObject: {fileID: 9130791276300238114, guid: 5d8ed6a64f9f74701b3c0348e081ee54, type: 3}
