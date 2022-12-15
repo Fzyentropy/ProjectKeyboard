@@ -43,6 +43,7 @@ public class Billboard : MonoBehaviour
         GameManager.Instance.OnBackToMenu += StopTimer;
         GameManager.Instance.OnScores += ChangeScores;
         GameManager.Instance.OnWins += CheckWinner;
+        GameManager.Instance.OnChangeDialogue += TalkTrash;
     }
 
     private void OnDestroy()
@@ -51,10 +52,12 @@ public class Billboard : MonoBehaviour
         GameManager.Instance.OnBackToMenu -= StopTimer;
         GameManager.Instance.OnScores -= ChangeScores;
         GameManager.Instance.OnWins -= CheckWinner;
+        GameManager.Instance.OnChangeDialogue -= TalkTrash;
     }
 
     private void InitializeBillboard()
     {
+        dialogueTextField.text = "Start";
         leftScore = 0;
         rightScore = 0;
         if (leftScoreTextField != null) leftScoreTextField.text = "0";
@@ -67,6 +70,7 @@ public class Billboard : MonoBehaviour
     {
         if (levelIndex != BillBoardID) return;
 
+        dialogueTextField.text = "Start";
         leftScore = 0;
         rightScore = 0;
         if (leftScoreTextField != null) leftScoreTextField.text = "0";
@@ -109,6 +113,8 @@ public class Billboard : MonoBehaviour
     {
         // print("enter change scores: " + BillBoardID + " " + levelIndex);
         if (BillBoardID != levelIndex) return;
+
+        dialogueTextField.text = "<color=red>Goal!!!!</color>";
         // print("same level index");
         switch (player)
         {
@@ -151,12 +157,12 @@ public class Billboard : MonoBehaviour
     {
         if (rightScore > leftScore)
         {
-            dialogueTextField.text = "Right Player Wins!";
+            dialogueTextField.text = "<color=blue>Right Player</color> Wins!";
             return Player.Right;
         }
         else if (rightScore < leftScore)
         {
-            dialogueTextField.text = "Left Player Wins!";
+            dialogueTextField.text = "<color=red>Left Player</color> Wins!";
             return Player.Left;
         }
         else
@@ -166,13 +172,16 @@ public class Billboard : MonoBehaviour
         }
     }
 
-    // private void TalkTrash(string Letter)
-    // {
-    //     dialogueTextField.text += Letter;
-    //
-    //     if (dialogText.Length >= 8)
-    //     {
-    //         dialogText = Letter;
-    //     }
-    // }
+    private void TalkTrash(int levelIndex, string Letter)
+    {
+        if (BillBoardID != levelIndex) return;
+
+        dialogueTextField.text += Letter;
+
+        if (dialogueTextField.text.Length >= 8)
+        {
+            dialogueTextField.text = Letter;
+        }
+        // dialogueTextField.text = dialogText;
+    }
 }

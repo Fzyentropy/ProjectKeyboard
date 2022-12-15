@@ -143,6 +143,12 @@ public class Key : MonoBehaviour
 
                 keyRb.DOMoveY(destinationY, pressDownTime);
             }
+
+            if (Input.GetKeyDown(keyName))
+            {
+                string printLetter = keyName.ToString();
+                if (printLetter.Length == 1) GameManager.Instance.OnChangeDialogue.Invoke(keyboardIndex, printLetter);
+            }
         }
     }
 

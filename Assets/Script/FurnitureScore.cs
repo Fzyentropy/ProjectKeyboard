@@ -20,7 +20,7 @@ public class FurnitureScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ScoreText.text = FScore.ToString();
+        // ScoreText.text = FScore.ToString();
     }
 
     private void OnTriggerEnter(Collider other)
