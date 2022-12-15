@@ -12,7 +12,7 @@ public class SumoScore : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        resultText.text = "Push your opponent out of the keyboard!";
+        // resultText.text = "Push your opponent out of the keyboard!";
     }
 
     private void OnTriggerEnter(Collider other)

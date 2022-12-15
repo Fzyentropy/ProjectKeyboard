@@ -22,7 +22,7 @@ public class SoccerScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ScoreText.text = SScore.ToString();
+        // ScoreText.text = SScore.ToString();
     }
 
     private void OnTriggerEnter(Collider other)

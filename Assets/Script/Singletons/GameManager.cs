@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     public Action OnBackToMenu;
     public Action<Billboard.Player, int> OnScores;
     public Action<Billboard.Player, int> OnWins;
+    public Action<int, string> OnChangeDialogue;
 
     private void Awake()
     {
