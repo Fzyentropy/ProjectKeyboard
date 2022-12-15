@@ -1,8 +1,10 @@
 using System.Collections;
 using System;
+using Script.SceneObjects;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Events;
 
 public class Billboard : MonoBehaviour
 {
@@ -12,7 +14,7 @@ public class Billboard : MonoBehaviour
     [ShowIf("hasTimeLimit")]
     public TextMeshProUGUI timeTextField;
     [ShowIf("hasTimeLimit")]
-    [SerializeField] private float timeLimit = 10f;
+    [SerializeField] private int timeLimit = 10;
 
     public bool hasScore = true;
     [ShowIf("hasScore")]
@@ -22,61 +24,121 @@ public class Billboard : MonoBehaviour
 
     public TextMeshProUGUI dialogueTextField;
 
+    private int leftScore = 0;
+    private int rightScore = 0;
 
+    private Coroutine startTimerCoroutine;
+
+    public enum Player
+    {
+        Left,
+        Right,
+        Draw
+    }
 
     void Start()
     {
         InitializeBillboard();
         GameManager.Instance.OnLevelStarts += InitializeBillboard;
+        GameManager.Instance.OnBackToMenu += StopTimer;
+        GameManager.Instance.OnScores += ChangeScores;
+        GameManager.Instance.OnWins += CheckWinner;
     }
 
     private void OnDestroy()
     {
         GameManager.Instance.OnLevelStarts -= InitializeBillboard;
+        GameManager.Instance.OnBackToMenu -= StopTimer;
+        GameManager.Instance.OnScores -= ChangeScores;
+        GameManager.Instance.OnWins -= CheckWinner;
     }
 
-    public void InitializeBillboard()
+    private void InitializeBillboard()
     {
-        leftScoreTextField.text = "0";
-        rightScoreTextField.text = "0";
-        timeTextField.text = timeLimit.ToString();
-        dialogueTextField.text = "";
+        leftScore = 0;
+        rightScore = 0;
+        if (leftScoreTextField != null) leftScoreTextField.text = "0";
+        if (rightScoreTextField != null) rightScoreTextField.text = "0";
+        if (timeTextField != null) timeTextField.text = timeLimit.ToString();
+        if (dialogueTextField != null) dialogueTextField.text = "";
     }
 
-    public void InitializeBillboard(int levelIndex)
+    private void InitializeBillboard(int levelIndex)
     {
         if (levelIndex != BillBoardID) return;
 
-        leftScoreTextField.text = "0";
-        rightScoreTextField.text = "0";
-        timeTextField.text = timeLimit.ToString();
-        dialogueTextField.text = "";
+        leftScore = 0;
+        rightScore = 0;
+        if (leftScoreTextField != null) leftScoreTextField.text = "0";
+        if (rightScoreTextField != null) rightScoreTextField.text = "0";
+        if (timeTextField != null) timeTextField.text = timeLimit.ToString();
+        if (dialogueTextField != null) dialogueTextField.text = "";
 
-        if (hasTimeLimit) StartCoroutine(StartTimer());
+        if (hasTimeLimit) startTimerCoroutine = StartCoroutine(StartTimer());
     }
 
-    public IEnumerator StartTimer()
+    private IEnumerator StartTimer()
     {
-        float counter = timeLimit;
-        while (counter > 0)
+        int counter = timeLimit;
+        while (counter >= 0)
         {
-            timeTextField.text = Mathf.RoundToInt(counter).ToString();
-            yield return new WaitForSeconds(Time.deltaTime);
-            counter -= Time.deltaTime;
+            timeTextField.text = counter.ToString();
+            yield return new WaitForSeconds(1);
+            counter--;
         }
 
-        int winner = CheckWinner();
+        // if (BillBoardID == GameManager.Instance.ControlManager.activeKeyboardIndex) yield return null;
+
+        Player winner = CheckWinnerByScore();
         GameManager.Instance.OnLevelEnds.Invoke(winner);
-        StartCoroutine(Timer(5f));
+        yield return new WaitForSeconds(1.5f);
         GameManager.Instance.OnBackToMenu.Invoke();
     }
-    IEnumerator Timer(float timeLimit)
-    {
-        // if (timeLimit <= 0) yield return null;
 
-        yield return new WaitForSeconds(timeLimit);
+    private void StopTimer()
+    {
+        if (startTimerCoroutine != null) StopCoroutine(startTimerCoroutine);
     }
 
+    /// <summary>
+    /// 0: left
+    /// 1: right
+    /// 2: tie
+    /// </summary>
+    private void ChangeScores(Player player, int levelIndex)
+    {
+        // print("enter change scores: " + BillBoardID + " " + levelIndex);
+        if (BillBoardID != levelIndex) return;
+        // print("same level index");
+        switch (player)
+        {
+            case Player.Left:
+                leftScore++;
+                leftScoreTextField.text = leftScore.ToString();
+                break;
+            case Player.Right:
+                rightScore++;
+                rightScoreTextField.text = rightScore.ToString();
+                break;
+        }
+    }
+
+    private void CheckWinner(Player player, int levelIndex)
+    {
+        // print("enter check winner: " + BillBoardID + " " + levelIndex);
+        if (BillBoardID != levelIndex) return;
+
+        // print("check winnner: " + player);
+        StartCoroutine(ScheduleWinningProcess(player));
+    }
+
+    private IEnumerator ScheduleWinningProcess(Player player)
+    {
+        dialogueTextField.text = $"{player} Player Wins!";
+        GameManager.Instance.OnLevelEnds.Invoke(player);
+        yield return new WaitForSeconds(1.5f);
+        GameManager.Instance.OnBackToMenu.Invoke();
+    }
 
     /// <summary>
     /// Get the winner of the level
@@ -85,24 +147,32 @@ public class Billboard : MonoBehaviour
     /// 2: tie
     /// </summary>
     /// <returns></returns>
-    private int CheckWinner()
+    private Player CheckWinnerByScore()
     {
-        int rightScore = Convert.ToInt32(rightScoreTextField.text);
-        int leftScore = Convert.ToInt32(leftScoreTextField.text);
         if (rightScore > leftScore)
         {
             dialogueTextField.text = "Right Player Wins!";
-            return 1;
+            return Player.Right;
         }
         else if (rightScore < leftScore)
         {
             dialogueTextField.text = "Left Player Wins!";
-            return 0;
+            return Player.Left;
         }
         else
         {
             dialogueTextField.text = "Draw!";
-            return 2;
+            return Player.Draw;
         }
     }
+
+    // private void TalkTrash(string Letter)
+    // {
+    //     dialogueTextField.text += Letter;
+    //
+    //     if (dialogText.Length >= 8)
+    //     {
+    //         dialogText = Letter;
+    //     }
+    // }
 }

@@ -9,6 +9,14 @@ TagManager:
   - Key
   - Player1
   - Player2
+  - FxTemporaire
+  - pole
+  - WrestlingScoreField
+  - RingScoreField
+  - SailingScoreField
+  - RightScoreField
+  - LeftScoreField
+  - FootballResetField
   layers:
   - Default
   - TransparentFX

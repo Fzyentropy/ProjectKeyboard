@@ -1,4 +1,5 @@
 using System;
+using Script.SceneObjects;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Script.Singletons;
@@ -9,18 +10,18 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-
     [LabelText("Managers")]
     public LevelManager LevelManager { get; private set; }
     public CameraManager CameraManager { get; private set; }
     public ControlManager ControlManager { get; private set; }
     public ScoreManager ScoreManager { get; private set; }
-    // public Utils Utils { get; private set; }
 
     [LabelText("Actions")]
     public Action<int> OnLevelStarts;
-    public Action<int> OnLevelEnds;
+    public Action<Billboard.Player> OnLevelEnds;
     public Action OnBackToMenu;
+    public Action<Billboard.Player, int> OnScores;
+    public Action<Billboard.Player, int> OnWins;
 
     private void Awake()
     {
@@ -35,7 +36,6 @@ public class GameManager : MonoBehaviour
         CameraManager = GetComponentInChildren<CameraManager>();
         ControlManager = GetComponentInChildren<ControlManager>();
         ScoreManager = GetComponentInChildren<ScoreManager>();
-        // Utils = GetComponentInChildren<Utils>();
     }
 
     private void Update()

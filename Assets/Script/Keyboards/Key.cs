@@ -43,6 +43,7 @@ public class Key : MonoBehaviour
     private void Update()
     {
         ChooseInputMode();
+        // transform.DOShakePosition(2f, Vector3.down * 25, 0);
     }
 
     private void OnDestroy()
@@ -109,7 +110,7 @@ public class Key : MonoBehaviour
     {
         yield return new WaitForSeconds(initDelay);
         // print(originalY);
-        transform.DOMoveY(originalY, 1f);
+        transform.DOMoveY(originalY, 0.75f);
     }
 
     private void PressKey()

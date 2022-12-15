@@ -7,6 +7,7 @@ namespace Script.Singletons
     {
         [HideInInspector] public int activeKeyboardIndex = -1;
         private int lastActiveKeyboardIndex = -1;
+
         private void Start()
         {
             GameManager.Instance.OnLevelStarts += SwitchControlKeyboard;

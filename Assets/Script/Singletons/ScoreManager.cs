@@ -32,10 +32,10 @@ public class ScoreManager : MonoBehaviour
         rightScoreTextField.text = "0";
     }
 
-    private void ChangeTotalScore(int winnerIndex)
+    private void ChangeTotalScore(Billboard.Player winner)
     {
-        if (winnerIndex == 0) leftScore++;
-        else if (winnerIndex == 1) rightScore++;
+        if (winner.Equals(Billboard.Player.Left)) leftScore++;
+        else if (winner.Equals(Billboard.Player.Right)) rightScore++;
 
         leftScoreTextField.text = leftScore.ToString();
         rightScoreTextField.text = rightScore.ToString();

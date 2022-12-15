@@ -1781,6 +1781,7 @@ Transform:
   m_Children:
   - {fileID: 5801104488001554656}
   - {fileID: 322833165019696579}
+  - {fileID: 1871516654673923314}
   m_Father: {fileID: 8664706514311962726}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3153,6 +3154,7 @@ Transform:
   m_Children:
   - {fileID: 4950980119984297973}
   - {fileID: 8664706514311962726}
+  - {fileID: 3114337053394752804}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3206,6 +3208,65 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7578662406025187199}
   m_Mesh: {fileID: 3863032265242061877, guid: d53e82860b23f0845bb77f8f69c53d52, type: 3}
+--- !u!1 &7633387971454379759
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1871516654673923314}
+  - component: {fileID: 4720171907468451286}
+  - component: {fileID: 106454092373940527}
+  m_Layer: 0
+  m_Name: FinishLine (1)
+  m_TagString: SailingScoreField
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1871516654673923314
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7633387971454379759}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.69, y: 0.060000002, z: -0.014552098}
+  m_LocalScale: {x: 0.05270382, y: 2.9, z: 0.96459705}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 903866497350276855}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4720171907468451286
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7633387971454379759}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.4592612, y: 4.6815534, z: 2.6159647}
+  m_Center: {x: 0.72963065, y: 2.57934, z: -0.0019178019}
+--- !u!114 &106454092373940527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7633387971454379759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6817c7f7d03eb0c429e5aa1719e9475a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resultText: {fileID: 0}
 --- !u!1 &7913350253194168713
 GameObject:
   m_ObjectHideFlags: 0
@@ -3839,10 +3900,9 @@ GameObject:
   m_Component:
   - component: {fileID: 322833165019696579}
   - component: {fileID: 8224578828627603850}
-  - component: {fileID: 2331310385227785068}
   m_Layer: 0
   m_Name: FinishLine
-  m_TagString: Untagged
+  m_TagString: SailingScoreField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3873,21 +3933,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 3.43, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2331310385227785068
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8931308741065405508}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6817c7f7d03eb0c429e5aa1719e9475a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resultText: {fileID: 0}
+  m_Size: {x: 2.4592612, y: 4.6815534, z: 2.6159647}
+  m_Center: {x: 0.72963065, y: 2.57934, z: -0.0019178019}
 --- !u!1 &9182635839834189549
 GameObject:
   m_ObjectHideFlags: 0
@@ -4714,4 +4761,102 @@ ParticleSystem:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8205706795460263317, guid: 326e86d5729c54e479798cacab220bb2, type: 3}
   m_PrefabInstance: {fileID: 5008880427655174776}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7234143262775237844
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7499496270952398584}
+    m_Modifications:
+    - target: {fileID: -8440629639745694820, guid: 80c513be132314265acfbe6f1ba52fce, type: 3}
+      propertyPath: hasScore
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8440629639745694820, guid: 80c513be132314265acfbe6f1ba52fce, type: 3}
+      propertyPath: timeLimit
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: -8440629639745694820, guid: 80c513be132314265acfbe6f1ba52fce, type: 3}
+      propertyPath: hasTimeLimit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 948464092984271749, guid: 80c513be132314265acfbe6f1ba52fce, type: 3}
+      propertyPath: m_Name
+      value: Sailing_Billboard
+      objectReference: {fileID: 0}
+    - target: {fileID: 948464092984271749, guid: 80c513be132314265acfbe6f1ba52fce, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4150641141500128089, guid: 80c513be132314265acfbe6f1ba52fce, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718603907579415024, guid: 80c513be132314265acfbe6f1ba52fce, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718603907579415024, guid: 80c513be132314265acfbe6f1ba52fce, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718603907579415024, guid: 80c513be132314265acfbe6f1ba52fce, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.28125075
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718603907579415024, guid: 80c513be132314265acfbe6f1ba52fce, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.06250156
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718603907579415024, guid: 80c513be132314265acfbe6f1ba52fce, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.038
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718603907579415024, guid: 80c513be132314265acfbe6f1ba52fce, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.703
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718603907579415024, guid: 80c513be132314265acfbe6f1ba52fce, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718603907579415024, guid: 80c513be132314265acfbe6f1ba52fce, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718603907579415024, guid: 80c513be132314265acfbe6f1ba52fce, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718603907579415024, guid: 80c513be132314265acfbe6f1ba52fce, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718603907579415024, guid: 80c513be132314265acfbe6f1ba52fce, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718603907579415024, guid: 80c513be132314265acfbe6f1ba52fce, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718603907579415024, guid: 80c513be132314265acfbe6f1ba52fce, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718603907579415024, guid: 80c513be132314265acfbe6f1ba52fce, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872901380345169622, guid: 80c513be132314265acfbe6f1ba52fce, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 80c513be132314265acfbe6f1ba52fce, type: 3}
+--- !u!4 &3114337053394752804 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5718603907579415024, guid: 80c513be132314265acfbe6f1ba52fce, type: 3}
+  m_PrefabInstance: {fileID: 7234143262775237844}
   m_PrefabAsset: {fileID: 0}

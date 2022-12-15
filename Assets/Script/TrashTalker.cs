@@ -16,12 +16,11 @@ public class TrashTalker : MonoBehaviour
     public static void TalkTrash(string Letter)
     {
         dialogText += Letter;
-        
+
         if (dialogText.Length >= 8)
         {
             dialogText = Letter;
         }
-
     }
 
     private void PrintText()

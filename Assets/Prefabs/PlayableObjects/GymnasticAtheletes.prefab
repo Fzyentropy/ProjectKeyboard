@@ -13842,7 +13842,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b56120f1461c84849ba0b628234f0d02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ringsScoreText: {fileID: 0}
+  Player: 0
   leftRing: {fileID: 1052746783183812038}
   rightRing: {fileID: 7318496864960704966}
   collisionBoxB: {fileID: 3899838099449653980}
@@ -14867,7 +14867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b56120f1461c84849ba0b628234f0d02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ringsScoreText: {fileID: 0}
+  Player: 1
   leftRing: {fileID: 7286231645077993429}
   rightRing: {fileID: 8361950889318330084}
   collisionBoxB: {fileID: 391571680895406059}

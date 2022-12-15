@@ -985,6 +985,7 @@ GameObject:
   - component: {fileID: 2116361701871020439}
   - component: {fileID: 2619860456297340381}
   - component: {fileID: 401331852461612171}
+  - component: {fileID: 104965558315233405}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Player2
@@ -1050,7 +1051,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 1, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.026576623, y: -0.4090712, z: 0.05315455}
+  m_ConnectedAnchor: {x: -0.026576623, y: -0.40907148, z: 0.05315439}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -1096,7 +1097,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 1, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 1.0619392, y: -0.5901175, z: -2.7477252}
+  m_ConnectedAnchor: {x: 1.061942, y: -0.5901178, z: -2.7477252}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -1142,7 +1143,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 1, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.058841567, y: -1.2847579, z: 2.8785725}
+  m_ConnectedAnchor: {x: 0.058839284, y: -1.2847577, z: 2.8785715}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -1189,6 +1190,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyExitFeedback: {fileID: 2524331551919340948}
+--- !u!114 &104965558315233405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2582429681631452508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1851d5dd14d849ddbf90f7daf5e5bc39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectID: 0
+  resetRequired: 0
+  spawnPosition: {x: 0, y: 0, z: 0}
+  resetTime: 2
+  player: 1
 --- !u!1 &2776262346828098925
 GameObject:
   m_ObjectHideFlags: 0
@@ -1204,6 +1222,7 @@ GameObject:
   - component: {fileID: 4107032284421759603}
   - component: {fileID: 5549755829391620712}
   - component: {fileID: 2151990817406567427}
+  - component: {fileID: 2986887449758629306}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Player1
@@ -1409,6 +1428,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyExitFeedback: {fileID: 2524331551919340948}
+--- !u!114 &2986887449758629306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2776262346828098925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1851d5dd14d849ddbf90f7daf5e5bc39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectID: 0
+  resetRequired: 0
+  spawnPosition: {x: 0, y: 0, z: 0}
+  resetTime: 2
+  player: 0
 --- !u!1 &3124155541127882969
 GameObject:
   m_ObjectHideFlags: 0

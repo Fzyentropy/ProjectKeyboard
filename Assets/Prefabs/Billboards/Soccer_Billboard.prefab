@@ -1538,7 +1538,7 @@ MonoBehaviour:
   BillBoardID: 4
   hasTimeLimit: 1
   timeTextField: {fileID: 6025981582795423226}
-  timeLimit: 10
+  timeLimit: 90
   hasScore: 1
   leftScoreTextField: {fileID: 3582262706483357742}
   rightScoreTextField: {fileID: 1174929885754914355}

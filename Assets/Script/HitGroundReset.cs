@@ -7,17 +7,6 @@ public class HitGroundReset : MonoBehaviour
 {
     [SerializeField] private GameObject footBall;
     private bool hit = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter(Collider other)
     {

@@ -12,6 +12,7 @@ public class SoccerScore : MonoBehaviour
     public TextMeshProUGUI ScoreText;
     [SerializeField] private MMF_Player goalFeedback;
     [SerializeField] private GameObject soccer;
+
     // Start is called before the first frame update
     void Start()
     {

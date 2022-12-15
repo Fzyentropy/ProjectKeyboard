@@ -1108,7 +1108,7 @@ MonoBehaviour:
   BillBoardID: 3
   hasTimeLimit: 1
   timeTextField: {fileID: 4522928513491517002}
-  timeLimit: 10
+  timeLimit: 90
   hasScore: 1
   leftScoreTextField: {fileID: 1590771126969537360}
   rightScoreTextField: {fileID: 2981207512018810467}

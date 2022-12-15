@@ -16,12 +16,6 @@ public class BallFeedbacks : MonoBehaviour
         ballRb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerExit(Collider other)
     {
         if (other.tag.Equals("Key") & transform.position.y < 3.8f)

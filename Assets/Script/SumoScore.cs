@@ -17,13 +17,13 @@ public class SumoScore : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player1")
+        if (other.tag.Equals("Player1"))
         {
             resultText.text = "Blue wins the game!";
             Debug.Log("P1");
             gameObject.SetActive(false);
         }
-        if (other.tag == "Player2")
+        if (other.tag.Equals("Player2"))
         {
             resultText.text = "Red wins the game!";
             Debug.Log("P2");

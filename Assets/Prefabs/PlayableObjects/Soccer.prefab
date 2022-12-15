@@ -1040,6 +1040,7 @@ GameObject:
   - component: {fileID: 4103182349223819662}
   - component: {fileID: 6410507098364529662}
   - component: {fileID: 1620285540942593588}
+  - component: {fileID: 851578882331665077}
   m_Layer: 0
   m_Name: Soccer
   m_TagString: Ball
@@ -1055,7 +1056,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9130791276300238114}
   m_LocalRotation: {x: -0, y: -0, z: -0.001794075, w: 0.9999984}
-  m_LocalPosition: {x: -1.8900003, y: 11.799999, z: -1.026}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -1174,3 +1175,20 @@ MonoBehaviour:
   hitPoleFeedback: {fileID: 5493416881007070764}
   landFeedback: {fileID: 6892019772041287556}
   kickFeedback: {fileID: 6892019772041287556}
+--- !u!114 &851578882331665077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9130791276300238114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1851d5dd14d849ddbf90f7daf5e5bc39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectID: 4
+  resetRequired: 1
+  resetPosition: {x: 0, y: 30, z: 0}
+  resetTime: 2
+  player: 0
