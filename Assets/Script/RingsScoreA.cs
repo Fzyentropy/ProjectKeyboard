@@ -18,7 +18,7 @@ public class RingsScoreA : MonoBehaviour
         
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other) //if player hit box A, then set bool to true
     {
         if (other.CompareTag("Ball"))
         {

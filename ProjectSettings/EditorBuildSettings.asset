@@ -8,4 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AmericanFootball.unity
     guid: 53ee6b988e4a3654ab71c5921a8d0107
+  - enabled: 1
+    path: Assets/Scenes/SumoWrestle.unity
+    guid: c83170c8463311f48997fdfd431a64bd
+  - enabled: 1
+    path: Assets/Scenes/Soccer V2.unity
+    guid: 09c48e70bce505d4786946f9f607ffb9
+  - enabled: 1
+    path: Assets/Scenes/GymnasticsRings.unity
+    guid: b086fb723f6b6c145a33eee1f8cd81d2
+  - enabled: 1
+    path: Assets/Scenes/Sailing.unity
+    guid: 58cfba29527deea4c895d6c86a87fee6
   m_configObjects: {}

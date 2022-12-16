@@ -9,7 +9,7 @@ public class LowerMassCenter : MonoBehaviour
     void Start()
     {
         rigid = GetComponent<Rigidbody>();
-        rigid.centerOfMass = new Vector3(0f, -1f, 0f);
+        rigid.centerOfMass = new Vector3(0f, -1f, 0f); //move mass center of rigidbody to a lower position
     }
 
     // Update is called once per frame

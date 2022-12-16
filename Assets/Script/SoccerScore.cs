@@ -21,12 +21,12 @@ public class SoccerScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ScoreText.text = SScore.ToString();
+        ScoreText.text = SScore.ToString();//send score to billboard
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Ball"))
+        if (other.CompareTag("Ball")) //when goal, add score, play feedback, start reset process
         {
             SScore += 1f;
             goalFeedback.PlayFeedbacks();
@@ -35,7 +35,7 @@ public class SoccerScore : MonoBehaviour
         }
     }
 
-    IEnumerator KickOff()
+    IEnumerator KickOff() //reset ball position after 2 seconds
     {
         yield return new WaitForSeconds(2);
         soccer.transform.position = new Vector3(7.5f, 3.5f, -3.5f);

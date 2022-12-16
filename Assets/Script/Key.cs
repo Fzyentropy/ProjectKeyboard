@@ -69,7 +69,8 @@ public class Key : MonoBehaviour
         if (isChargeable) InitializeChargeSetting();
         
         // move to its own height
-        StartCoroutine(SetInitHeight());
+        // StartCoroutine(SetInitHeight());
+        transform.position = new Vector3(transform.position.x, originalY, transform.position.z);
     }
 
     private void InitializeChargeSetting()
@@ -79,12 +80,12 @@ public class Key : MonoBehaviour
         startColor = keyMaterial.color;
     }
     
-    private IEnumerator SetInitHeight()
-    {
-        yield return new WaitForSeconds(initDelay);
-        print(originalY);
-        transform.DOMoveY(originalY, 1f);
-    }
+    // private IEnumerator SetInitHeight()
+    // {
+    //     yield return new WaitForSeconds(initDelay);
+    //     print(originalY);
+    //     transform.DOMoveY(originalY, 1f);
+    // }
 
     private void PressKey()
     {
@@ -111,6 +112,12 @@ public class Key : MonoBehaviour
                 if (isChargeable) StartCharge();
 
                 keyRb.DOMoveY(destinationY, pressDownTime);
+            }
+
+            //send string keyName to TalkTrash when the key is pressed down
+            if (Input.GetKeyDown((keyName)))
+            {
+                TrashTalker.TalkTrash(keyName.ToString());
             }
         }
     }

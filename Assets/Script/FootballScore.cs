@@ -20,7 +20,7 @@ public class FootballScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ScoreText.text = SScore.ToString();
+        ScoreText.text = SScore.ToString(); //show score on the billboard textbox
     }
 
     private void OnTriggerEnter(Collider other)
@@ -28,7 +28,7 @@ public class FootballScore : MonoBehaviour
         if (other.tag == "Ball")
         {
             SScore += 1f;
-            goalFeedback.PlayFeedbacks();
+            goalFeedback.PlayFeedbacks(); //if the ball hit the trigger box, add score and play juicy feedback
             // StartCoroutine(KickOff());
         }
     }

@@ -10,14 +10,14 @@ public class TrashTalker : MonoBehaviour
 
     private void Update()
     {
-        PrintText();
+        PrintText(); //show text on billboard
     }
 
     public static void TalkTrash(string Letter)
     {
-        dialogText += Letter;
+        dialogText += Letter; //put new string input after the original string
         
-        if (dialogText.Length >= 8)
+        if (dialogText.Length >= 8) //if text length exceeds 8, clear the textbox
         {
             dialogText = Letter;
         }

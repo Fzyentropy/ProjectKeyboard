@@ -23,17 +23,17 @@ public class HitGroundReset : MonoBehaviour
     {
         if (other.CompareTag("Ball") & hit == false)
         {
-            StartCoroutine(Kickoff());
-            hit = true;
-            footBall.tag = "Untagged";
+            StartCoroutine(Kickoff()); //if ball hit the ground outside keyboard, start “kick off"
+            hit = true; //disable the reset for a while
+            footBall.tag = "Untagged"; //disable the reset for a while
         }
     }
 
     IEnumerator Kickoff()
     {
-        yield return new WaitForSeconds(1);
-        footBall.transform.position = new Vector3(7.5f, 3.5f, -3.5f);
-        hit = false;
-        footBall.tag = "Ball";
+        yield return new WaitForSeconds(1); //wait for 1 second
+        footBall.transform.position = new Vector3(7.5f, 3.5f, -3.5f); //reset ball to a position
+        hit = false; //set reset on again
+        footBall.tag = "Ball";//set reset on again
     }
 }

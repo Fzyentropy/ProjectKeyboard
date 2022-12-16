@@ -13,17 +13,20 @@ public class AddWaveForce : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //get boat Rigidbody
         rigid = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        //start adding magic wave force after several seconds
         Invoke("WaveForce",startTime);    
     }
 
     private void WaveForce()
     {
+        //push boat right if the boat is popped up high enough
         if (transform.position.y > 1f) ;
         {
             rigid.AddForce(Vector3.right * waveForce, ForceMode.Impulse);

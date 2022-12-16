@@ -13,7 +13,7 @@ public class Utils : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timeLeft = timeLimit;
+        timeLeft = timeLimit; //reset timer
     }
 
     // Update is called once per frame
@@ -25,10 +25,10 @@ public class Utils : MonoBehaviour
     public void Timer()
     {
         timeLeft -= Time.deltaTime;
-        timerText.text = "Time left: " + Mathf.FloorToInt(timeLeft);
+        timerText.text = "Time left: " + Mathf.FloorToInt(timeLeft); //show timer on billboard
         if (timeLeft <= 0f)
         {
-            timerText.text = "Time's Up!";
+            timerText.text = "Time's Up!"; //if timer goes to 0, show time's up
         }
     }
 }

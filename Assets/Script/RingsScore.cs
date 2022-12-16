@@ -31,27 +31,29 @@ public class RingsScore : MonoBehaviour
     {
         collisionBoxA.transform.position = new Vector3(
             (leftRing.transform.position.x + rightRing.transform.position.x) / 2,
-            leftRing.transform.position.y - 1f, leftRing.transform.position.z + 1.5f);
+            leftRing.transform.position.y - 1f, leftRing.transform.position.z + 1.5f); //set collision box A position
         
         collisionBoxB.transform.position = new Vector3(
             (leftRing.transform.position.x + rightRing.transform.position.x) / 2,
-            leftRing.transform.position.y - 1f, leftRing.transform.position.z - 1.5f);
+            leftRing.transform.position.y - 1f, leftRing.transform.position.z - 1.5f); //set collision box B position
+
 
         collisionBoxC.transform.position =
             new Vector3((leftRing.transform.position.x + rightRing.transform.position.x) / 2,
-                leftRing.transform.position.y + 1f, leftRing.transform.position.z);
+                leftRing.transform.position.y + 1f, leftRing.transform.position.z); //set collision box C position
+
         
         transform.position = new Vector3(
             (leftRing.transform.position.x + rightRing.transform.position.x) / 2,
-            leftRing.transform.position.y - 4f, leftRing.transform.position.z);
-        Debug.Log(collisionBoxB.GetComponent<RingsScoreB>().hitB);
+            leftRing.transform.position.y - 4f, leftRing.transform.position.z); //set bottom collision box position
+        // Debug.Log(collisionBoxB.GetComponent<RingsScoreB>().hitB);
         // if (gameObject.transform.rotation.x >= 0.98 || gameObject.transform.rotation.x <= -0.98)
         // {
         //     ringsScore += 1f;
         //     Debug.Log("Turned!");
         // }
         
-        ringsScoreText.text = ringsScore.ToString();
+        ringsScoreText.text = ringsScore.ToString(); //send score to the textbox
         
     }
 
@@ -64,17 +66,17 @@ public class RingsScore : MonoBehaviour
                 collisionBoxC.GetComponent<RingsScoreC>().hitC)
             {
                 ringsScore += 1f;
-                feedBack.PlayFeedbacks();
+                feedBack.PlayFeedbacks(); //if player go through A/B/C collision box without hitting the bottom box, then when hitting bottom box, plus 1 score
                 collisionBoxA.GetComponent<RingsScoreA>().hitA = false;
                 collisionBoxB.GetComponent<RingsScoreB>().hitB = false;
-                collisionBoxC.GetComponent<RingsScoreC>().hitC = false;
+                collisionBoxC.GetComponent<RingsScoreC>().hitC = false; //then set ABC box bool to false
             }
             else
             {
                 collisionBoxA.GetComponent<RingsScoreA>().hitA = false;
                 collisionBoxA.GetComponent<RingsScoreB>().hitB = false;
-                collisionBoxA.GetComponent<RingsScoreC>().hitC = false;
-            }
+                collisionBoxA.GetComponent<RingsScoreC>().hitC = false; //if any A/B/C is not triggered, when hitting bottom box, set all to false
+            } 
 
         }
 

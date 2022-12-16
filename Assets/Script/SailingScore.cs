@@ -12,7 +12,7 @@ public class SailingScore : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        resultText.text = "Create the wave and keep pushing!";
+        resultText.text = "Create the wave and keep pushing!"; //show text on billboard
     }
 
     // Update is called once per frame
@@ -23,15 +23,15 @@ public class SailingScore : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player1")
+        if (other.tag == "Player1") //if player 1 reach the finishing line first
         {
-            resultText.text = "Red wins the game!";
-            gameObject.SetActive(false);
+            resultText.text = "Red wins the game!"; //show player 1 win
+            gameObject.SetActive(false); //deactivate finishing line
         }
-        if (other.tag == "Player2")
+        if (other.tag == "Player2")//if player 2 reach the finishing line first
         {
-            resultText.text = "Blue wins the game!";
-            gameObject.SetActive(false);
+            resultText.text = "Blue wins the game!";//show player 2 win
+            gameObject.SetActive(false);//deactivate finishing line
         }
     }
 }
