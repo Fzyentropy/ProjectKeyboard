@@ -20502,7 +20502,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4409896215694309043, guid: 343e577fcc5cd429281e951bf1730479, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4513955580691276009, guid: 343e577fcc5cd429281e951bf1730479, type: 3}
       propertyPath: m_IsActive
@@ -20588,6 +20588,54 @@ PrefabInstance:
       propertyPath: rightScoreTextField
       value: 
       objectReference: {fileID: 8565900437557256310}
+    - target: {fileID: 7914159509113144502, guid: 343e577fcc5cd429281e951bf1730479, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 7914159509113144502, guid: 343e577fcc5cd429281e951bf1730479, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7914159509113144502, guid: 343e577fcc5cd429281e951bf1730479, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -65
+      objectReference: {fileID: 0}
+    - target: {fileID: 8097954399389339426, guid: 343e577fcc5cd429281e951bf1730479, type: 3}
+      propertyPath: m_text
+      value: Push your opponent out of the keyboard!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8097954399389339426, guid: 343e577fcc5cd429281e951bf1730479, type: 3}
+      propertyPath: m_fontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8097954399389339426, guid: 343e577fcc5cd429281e951bf1730479, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8097954399389339426, guid: 343e577fcc5cd429281e951bf1730479, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8097954399389339426, guid: 343e577fcc5cd429281e951bf1730479, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8097954399389339426, guid: 343e577fcc5cd429281e951bf1730479, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8097954399389339426, guid: 343e577fcc5cd429281e951bf1730479, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
+    - target: {fileID: 8097954399389339426, guid: 343e577fcc5cd429281e951bf1730479, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 8097954399389339426, guid: 343e577fcc5cd429281e951bf1730479, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 343e577fcc5cd429281e951bf1730479, type: 3}
 --- !u!114 &951307920210882252 stripped

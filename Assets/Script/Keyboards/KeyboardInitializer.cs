@@ -78,7 +78,8 @@ public class KeyboardInitializer : SerializedMonoBehaviour
         AmericanFootball,
         Sailing,
         SumoWrestling,
-        GymnasticRings
+        GymnasticRings,
+        Esc
     }
 
     void Awake()
@@ -187,7 +188,7 @@ public class KeyboardInitializer : SerializedMonoBehaviour
     {
         Vector2 escapeKeyLoc = new Vector2(-1, 0);
         Vector3 escapeKeyPos = new Vector3(startingKeyPos.x + 0.5f * keyScale, 0f, startingKeyPos.z + keyScale + keyboardGapZ);
-        GameObject escapeKey = Instantiate(keyModelsDictionary[KeyTypes.Letters], escapeKeyPos, Quaternion.identity, transform);
+        GameObject escapeKey = Instantiate(keyModelsDictionary[KeyTypes.Esc], escapeKeyPos, Quaternion.identity, transform);
         escapeKey.transform.localScale *= keyScale;
         SetFunction(escapeKey, escapeKeyLoc);
 

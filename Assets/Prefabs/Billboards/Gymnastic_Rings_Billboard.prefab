@@ -421,7 +421,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b56c12a2d829c047b6da243773d62b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trashTalkDialogBox: {fileID: 4828922857490909778}
 --- !u!1 &1861517225217085515
 GameObject:
   m_ObjectHideFlags: 0
