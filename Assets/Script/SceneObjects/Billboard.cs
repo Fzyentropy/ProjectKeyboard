@@ -75,10 +75,6 @@ public class Billboard : MonoBehaviour
         rightScore = 0;
         if (leftScoreTextField != null) leftScoreTextField.text = "0";
         if (rightScoreTextField != null) rightScoreTextField.text = "0";
-        // if (BillBoardID == 0)
-        // {
-        //     timeTextField.text =
-        // }
         if (timeTextField != null) timeTextField.text = timeLimit.ToString();
         if (dialogueTextField != null) dialogueTextField.text = "";
 

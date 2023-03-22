@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class LowerMassCenter : MonoBehaviour
 {
-    private Rigidbody rigid;
+    private Rigidbody rb;
+
+    public float centerOffset = -1.5f;
     // Start is called before the first frame update
     void Start()
     {
-        rigid = GetComponent<Rigidbody>();
-        rigid.centerOfMass = new Vector3(0f, -1.5f, 0f);
+        rb = GetComponent<Rigidbody>();
+        rb.centerOfMass = new Vector3(0f, centerOffset, 0f);
     }
 }
