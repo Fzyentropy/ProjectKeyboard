@@ -212,7 +212,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 9
+      Data: 8
     - Name: 
       Entry: 7
       Data: 
@@ -382,27 +382,6 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 7
-      Data: UnityEngine.Vector2, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: -1
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: $v
-      Entry: 3
-      Data: 13
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
       Entry: 13
       Data: 
     - Name: 
@@ -551,7 +530,7 @@ MonoBehaviour:
   rightKeysMat: {fileID: 2100000, guid: eb78f5fb2649f98419b170a098b020b3, type: 2}
   pressDownTime: 0.2
   bounceUpTime: 0.1
-  maxProtrudeDistance: 1.5
+  maxProtrudeDistance: 1
   isChargeable: 1
   maxChargeTime: 0.5
   chargedColor: {r: 1, g: 0, b: 0, a: 0}

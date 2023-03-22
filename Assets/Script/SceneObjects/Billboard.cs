@@ -114,7 +114,8 @@ public class Billboard : MonoBehaviour
         // print("enter change scores: " + BillBoardID + " " + levelIndex);
         if (BillBoardID != levelIndex) return;
 
-        dialogueTextField.text = "<color=red>Goal!!!!</color>";
+        dialogueTextField.text = BillBoardID == 3 ? "<size=18><color=black>10!!!!</color></size>" : "<color=black>GOAL!!!!</color>";
+
         // print("same level index");
         switch (player)
         {
