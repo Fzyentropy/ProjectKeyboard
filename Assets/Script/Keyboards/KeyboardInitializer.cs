@@ -28,7 +28,7 @@ public class KeyboardInitializer : SerializedMonoBehaviour
     public float keyScale = 25;
 
     [Header("Key Settings")]
-    [Range(0f, 2f)]
+    [Range(-2f, 2f)]
     public float keyTravelDistance;
     private float keyAltitude;
     [SerializeField] private Material leftKeysMat;

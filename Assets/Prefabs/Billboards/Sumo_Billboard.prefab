@@ -67,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ce76fe7b96331754a9014b0d4b937f35, type: 2}
+  - {fileID: 2100000, guid: ef33282e8177a49d0ab0525f5f53c2ab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -150,8 +150,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1163096568859481650}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.28132775, y: 0.27146143, z: -0.026555993}
-  m_LocalScale: {x: 0.39751038, y: 0.3975103, z: 0.39751038}
+  m_LocalPosition: {x: -0.3037297, y: 0.2935912, z: -0.026555993}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5718603907579415024}
@@ -877,7 +877,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -274, y: 100}
+  m_AnchoredPosition: {x: 49.9986, y: 100}
   m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8088357023351436288
@@ -989,7 +989,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b56c12a2d829c047b6da243773d62b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trashTalkDialogBox: {fileID: 4168363164562101737}
 --- !u!1 &8236543650215113523
 GameObject:
   m_ObjectHideFlags: 0

@@ -75,6 +75,10 @@ public class Billboard : MonoBehaviour
         rightScore = 0;
         if (leftScoreTextField != null) leftScoreTextField.text = "0";
         if (rightScoreTextField != null) rightScoreTextField.text = "0";
+        // if (BillBoardID == 0)
+        // {
+        //     timeTextField.text =
+        // }
         if (timeTextField != null) timeTextField.text = timeLimit.ToString();
         if (dialogueTextField != null) dialogueTextField.text = "";
 
@@ -114,7 +118,7 @@ public class Billboard : MonoBehaviour
         // print("enter change scores: " + BillBoardID + " " + levelIndex);
         if (BillBoardID != levelIndex) return;
 
-        dialogueTextField.text = BillBoardID == 3 ? "<size=18><color=black>10!!!!</color></size>" : "<color=black>GOAL!!!!</color>";
+        dialogueTextField.text = BillBoardID == 3 ? "<size=90><color=black>10!!!!</color></size>" : "<size=90><color=black>GOAL!!!!</color></size>";
 
         // print("same level index");
         switch (player)
@@ -141,7 +145,8 @@ public class Billboard : MonoBehaviour
 
     private IEnumerator ScheduleWinningProcess(Player player)
     {
-        dialogueTextField.text = $"{player} Player Wins!";
+        if (player is Player.Right) dialogueTextField.text = "<size=56>RIGHT PLAYER WINS!</size>";
+        else dialogueTextField.text = "<size=56>LEFT PLAYER WINS!</size>";
         GameManager.Instance.OnLevelEnds.Invoke(player);
         yield return new WaitForSeconds(1.5f);
         GameManager.Instance.OnBackToMenu.Invoke();
@@ -158,17 +163,17 @@ public class Billboard : MonoBehaviour
     {
         if (rightScore > leftScore)
         {
-            dialogueTextField.text = "<color=blue>Right Player</color> Wins!";
+            dialogueTextField.text = "<size=56><color=blue>RIGHT PLAYER</color> WINS!</size>";
             return Player.Right;
         }
         else if (rightScore < leftScore)
         {
-            dialogueTextField.text = "<color=red>Left Player</color> Wins!";
+            dialogueTextField.text = "<size=56><color=red>LEFT PLAYER</color> WINS!</size>";
             return Player.Left;
         }
         else
         {
-            dialogueTextField.text = "Draw!";
+            dialogueTextField.text = "TIE!";
             return Player.Draw;
         }
     }

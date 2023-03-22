@@ -5,8 +5,8 @@ using UnityEngine;
 using TMPro;
 public class TrashTalker : MonoBehaviour
 {
-    private TextMeshProUGUI trashTalkDialogBox;
-    private string dialogText = "Start!";
+    // private TextMeshProUGUI trashTalkDialogBox;
+    // private string dialogText = "Start!";
 
     // private void Start()
     // {

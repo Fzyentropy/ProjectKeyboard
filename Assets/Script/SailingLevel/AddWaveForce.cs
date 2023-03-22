@@ -9,24 +9,34 @@ public class AddWaveForce : MonoBehaviour
 {
     [SerializeField] private float startTime;
     [SerializeField] private float waveForce;
-    private Rigidbody rigid;
+    private Rigidbody rb;
+    private bool canAddForce = false;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        rigid = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
+        Invoke(nameof(ChangeState), startTime);
+    }
+
+    private void ChangeState()
+    {
+        canAddForce = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Invoke("WaveForce",startTime);    
+        if (canAddForce) WaveForce();
+        // Invoke("WaveForce",startTime);
     }
 
     private void WaveForce()
     {
         if (transform.position.y > 1f)
         {
-            rigid.AddForce(Vector3.right * waveForce, ForceMode.Impulse);
+            rb.AddForce(Vector3.right * waveForce, ForceMode.Impulse);
         }
     }
 }

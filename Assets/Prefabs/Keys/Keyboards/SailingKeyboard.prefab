@@ -515,7 +515,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  keyboardPos: {x: 0, y: 0, z: 0}
+  keyboardPos: {x: 0, y: -1.5, z: 0}
   keyboardIndex: 2
   activeKeys: {fileID: 11400000, guid: 022178e7812e541dfae11b0bd5229cda, type: 2}
   keyCountEachRow: 0e0000000e0000000d0000000c00000001000000
@@ -525,15 +525,15 @@ MonoBehaviour:
   allowMultipleInput: 1
   isAnyKeyPressed: 0
   keyScale: 1
-  keyTravelDistance: 1
+  keyTravelDistance: -0.5
   leftKeysMat: {fileID: 2100000, guid: 017295119a0c0482496dc7ea028992bb, type: 2}
   rightKeysMat: {fileID: 2100000, guid: 017295119a0c0482496dc7ea028992bb, type: 2}
-  pressDownTime: 0.2
-  bounceUpTime: 0.1
-  maxProtrudeDistance: 0.5
+  pressDownTime: 0.05
+  bounceUpTime: 0.05
+  maxProtrudeDistance: 0
   isChargeable: 1
-  maxChargeTime: 0.2
-  chargedColor: {r: 1, g: 0, b: 0, a: 0}
+  maxChargeTime: 1
+  chargedColor: {r: 1, g: 1, b: 1, a: 0}
 --- !u!1 &5623166027808354028
 GameObject:
   m_ObjectHideFlags: 0
